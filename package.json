@@ -18,6 +18,7 @@
     "react-i18next": "^14.1.2"
   },
   "devDependencies": {
+    "daisyui": "^4.12.10",
     "eslint": "^8",
     "eslint-config-next": "14.2.5",
     "i18nexus-cli": "^3.4.0",

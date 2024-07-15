@@ -34,6 +34,15 @@
         "lightgray": "#555347",
         "lightgreen": "#BAD056",
       },
+      placeholderColor: {
+        'custom-green': '#6C7731',
+      },
     },
   },
+  variants: {
+    extend: {
+      placeholderColor: ['focus', 'hover'],
+    },
+  },
+  plugins: [require("daisyui")],
 }
