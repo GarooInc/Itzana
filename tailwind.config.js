@@ -26,11 +26,13 @@
     },
     extend: {
       fontFamily: {
+        'futura': ['futura', 'sans-serif']
       },
       colors: {
         "light-brown": "#C9A86E",
         "brown": "#917136",
         "green": "#6C7731",
+        "lightgreen": "#bad056",
         "lightgray": "#555347",
         "lightgreen": "#BAD056",
       },

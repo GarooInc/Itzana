@@ -17,3 +17,7 @@
   padding: 120px 24px 160px 24px;
   pointer-events: none;
 }
+
+.page{
+  @apply flex h-screen flex-col items-center;
+}
