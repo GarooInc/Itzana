@@ -5,7 +5,7 @@ export const metadata = {
     title: 'Kaana Resort',
     description: 'At Kaana, we offer luxury accommodations, adventure tours, and all-inclusive packages. ',
     url: '',
-    image: '',
+    image: '/assets/images/logo_v3.png'
 }
 
 const RootLayout = ({children}) => {
@@ -13,7 +13,7 @@ const RootLayout = ({children}) => {
     <html lang="es">
         <head>
             <title>{metadata.title}</title>
-            <link rel="icon" type="image/png+xml" href="" />
+            <link rel="icon" type="image/png+xml" href="/assets/images/logo_v3.png" />
             <meta name="description" content={metadata.description} />
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <meta property="og:title" content={metadata.title} />
