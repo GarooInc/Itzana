@@ -19,7 +19,7 @@ export default async function RoomService({ params: { locale }}) {
     return (
         <TranslationsProvider locale={locale} namespaces={namespaces} resources={resources}>
         <main className="page bg-white py-20 px-10">
-            <div className='flex justify-between items-center w-full'>
+            <div className='flex justify-between items-center w-full py-4'>
                 <IoIosArrowDropleft className="text-3xl text-lightgray" />
                 <div className='flex justify-center items-center gap-4'>
                     <img src="/assets/images/logo_v3.png" alt="logo" className="w-[50px]" />
