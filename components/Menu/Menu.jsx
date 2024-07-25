@@ -25,7 +25,7 @@ const Menu = () => {
     }, [])
 
   return (
-    <div class="grid grid-cols-2 gap-4 md:grid-cols-4 grid-flow-row-dense auto-rows-auto">
+    <div className="grid grid-cols-2 gap-4 md:grid-cols-4 grid-flow-row-dense auto-rows-auto">
         { food.map((item, index) => (
             //if index is 0,3 , 5 apply row-span-2
             <div key={index} className={`bg-white px-2 py-6 shadow rounded-lg gap-2 flex flex-col relative ${index%3 ==0 ? 'mb-6 ' : ''}`}>
