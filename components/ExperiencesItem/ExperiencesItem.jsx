@@ -28,7 +28,7 @@ const ExperiencesItem = () => {
     }, [])
 
   return (
-    <div className="grid grid-cols-2 gap-4 md:grid-cols-4 grid-flow-row-dense auto-rows-auto mt-10">
+    <div className="grid grid-cols-2 gap-4 md:grid-cols-4 grid-flow-row-dense auto-rows-auto pt-10">
         {console.log(experiences)}
         {
             experiences.map((item, index) => (

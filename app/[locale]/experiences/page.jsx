@@ -17,14 +17,6 @@ return (
                 <img src="/assets/images/logo_v3.png" alt="logo" className="w-[100px]" />
                 <h1 className="text-4xl text-center text-oxblood font-futura font-bold">Experiences</h1>
             </div>
-            <div className="flex justify-between w-full">
-                <div className="filters">
-                    <div className="text_filter">Browse by feature</div>
-                </div>
-                <div className="filters">
-                    <div className="text_filter">Room #112</div>
-                </div>
-            </div>
             <ExperiencesItem />
         </div>
         <LanguageSwitcher />
