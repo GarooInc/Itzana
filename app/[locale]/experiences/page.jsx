@@ -2,6 +2,7 @@ import React from 'react'
 import initTranslations from '@/app/i18n'
 import TranslationsProvider from '@/components/TranslationsProvider'
 import LanguageSwitcher from '@/components/LanguageSwitcher/LanguageSwitcher'
+import ExperiencesItem from '@/components/ExperiencesItem/ExperiencesItem'
 
 
 const namespaces = ['experiences', 'header']
@@ -24,6 +25,7 @@ return (
                     <div className="text_filter">Room #112</div>
                 </div>
             </div>
+            <ExperiencesItem />
         </div>
         <LanguageSwitcher />
     </TranslationsProvider>
