@@ -2,8 +2,8 @@ import "@/styles/globals.css"
 
 
 export const metadata = {
-    title: 'Kaana Resort',
-    description: 'At Kaana, we offer luxury accommodations, adventure tours, and all-inclusive packages. ',
+    title: 'Itz Ana  Resort',
+    description: 'At Itz Ana resort, we offer luxury accommodations, adventure tours, and all-inclusive packages. ',
     url: '',
     image: '/assets/images/logo_v3.png'
 }
