@@ -32,7 +32,7 @@ const Menu = () => {
                 <h3 className="text-black text-base leading-tight font-futura mt-2">{item.Title}</h3>
                 <p className="text-black text-xs font-[futura light] leading-none">{item.Description}</p>
                 <p className="text-lightgray text-xs font-light leading-none font-futura absolute bottom-2 left-2">£{item.Price}</p>
-                <button className="rounded shadow justify-start items-center text-xs inline-flex font-futura bg-lightgreen text-lightgray px-2 py-1 absolute bottom-2 right-2">Add to Cart</button>
+                <button className="rounded shadow justify-start items-center text-xs inline-flex font-futura bg-light-brown text-lightgray px-2 py-1 absolute bottom-2 right-2">Add to Cart</button>
             </div>
         )) }
     </div>

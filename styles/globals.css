@@ -21,3 +21,11 @@
 .page{
   @apply flex min-h-screen flex-col items-center;
 }
+
+.filters{
+  @apply h-6 px-2 py-1 bg-white rounded-md shadow justify-start items-center gap-1 inline-flex;
+}
+
+.text_filter{
+  @apply text-center text-black text-xs font-light font-futura leading-none;
+}

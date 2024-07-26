@@ -22,8 +22,7 @@ export default async function RoomService({ params: { locale }}) {
             <div className='flex justify-between items-center w-full py-4'>
                 <IoIosArrowDropleft className="text-3xl text-lightgray" />
                 <div className='flex justify-center items-center gap-4'>
-                    <img src="/assets/images/logo_v3.png" alt="logo" className="w-[50px]" />
-                    <h1 className="text-4xl text-center text-green font-futura font-bold">Fam</h1>
+                    <img src="/assets/images/logo_v2.png" alt="logo" className="w-[100px]" />
                 </div>
                 <FaShoppingCart className="text-3xl text-lightgray" />
             </div>
