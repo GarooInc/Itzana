@@ -30,7 +30,7 @@ return (
             <div className="w-full md:h-3/5">
                 <Carousel images={images} />
             </div>
-            <div className='flex flex-col justify-center items-center w-full h-full bg-white px-10 md:p-14'>
+            <div className='flex flex-col justify-center items-center w-full h-full bg-white p-10 md:p-14'>
                 <h1 className="principal_title">WELCOME TO ITZ&#39;ANA RESORT &amp; RESIDENCES</h1>
                 <p className="text-center md:text-xl text-md  text-darkgray font-futura font-bold">A Luxury Oasis on the Caribbean Sea</p>
                 <span className="text-center text-darkgray font-futura-light my-4">
