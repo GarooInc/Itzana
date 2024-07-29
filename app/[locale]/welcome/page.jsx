@@ -4,6 +4,7 @@ import TranslationsProvider from '@/components/TranslationsProvider'
 import LanguageSwitcher from '@/components/LanguageSwitcher/LanguageSwitcher'
 import ArrowBack from '@/components/ArrowBack/ArrowBack'
 import Carousel from '@/components/Carousel/Carousel'
+import ChatBubble from '@/components/ChatBubble/ChatBubble'
 
 
 
@@ -29,7 +30,7 @@ return (
             <div className="w-full md:h-3/5">
                 <Carousel images={images} />
             </div>
-            <div className='flex flex-col justify-center items-center w-full h-full bg-white px-10'>
+            <div className='flex flex-col justify-center items-center w-full h-full bg-white px-10 md:p-14'>
                 <h1 className="text-xl md:text-2xl text-center text-oxblood font-futura font-bold m-2">WELCOME TO ITZ&#39;ANA RESORT &amp; RESIDENCES</h1>
                 <p className="text-center md:text-xl text-md  text-darkgray font-futura font-bold">A Luxury Oasis on the Caribbean Sea</p>
                 <span className="text-center text-darkgray font-futura-light my-4">
@@ -40,8 +41,8 @@ return (
                     spirit of our Placencia resort, where the reef meets the rainforest. Life imitates luxury at Itz&#39;ana.
                 </span>
             </div>
-
         </div>
+        <ChatBubble />
       </div>
         <LanguageSwitcher />
     </TranslationsProvider>
