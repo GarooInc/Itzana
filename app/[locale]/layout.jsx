@@ -1,4 +1,5 @@
 import "@/styles/globals.css"
+import { CartProvider } from '@/contexts/CartContext'
 
 
 export const metadata = {
@@ -24,7 +25,9 @@ const RootLayout = ({children}) => {
         </head>
         <body>
             <main className='app'>
+                <CartProvider>
                   {children}
+                </CartProvider>
             </main>
         </body>
     </html>

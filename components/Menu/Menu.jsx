@@ -1,9 +1,12 @@
 "use client";
 import React, {useState, useEffect} from 'react'
 import PocketBase from 'pocketbase'
+import { useCart } from '@/contexts/CartContext'
 
 const Menu = () => {
-    const [food, setFood] = useState([]);
+    const [food, setFood] = useState([])
+
+    const { dispatch } = useCart()
 
     const pb = new PocketBase('https://kaana.garooinc.com/kaana')
     pb.autoCancellation(false);
@@ -24,6 +27,10 @@ const Menu = () => {
         fetchData()
     }, [])
 
+    const addTocart = (item) => {
+        dispatch({ type: 'ADD_ITEM', payload: item })
+    }
+
   return (
     <div className="grid grid-cols-2 gap-4 md:grid-cols-4 grid-flow-row-dense auto-rows-auto">
         { food.map((item, index) => (
@@ -32,7 +39,7 @@ const Menu = () => {
                 <h3 className="text-black text-base leading-tight font-futura mt-2">{item.Title}</h3>
                 <p className="text-black text-xs font-[futura light] leading-none">{item.Description}</p>
                 <p className="text-lightgray text-xs font-light leading-none font-futura absolute bottom-2 left-2">£{item.Price}</p>
-                <button className="rounded shadow justify-start items-center text-xs inline-flex font-futura bg-light-brown text-lightgray px-2 py-1 absolute bottom-2 right-2">Add to Cart</button>
+                <button className="rounded shadow justify-start items-center text-xs inline-flex font-futura bg-light-brown text-lightgray px-2 py-1 absolute bottom-2 right-2" onClick={() => addTocart(item)}>Add to cart</button>
             </div>
         )) }
     </div>

@@ -30,6 +30,10 @@
   @apply text-center text-black text-xs font-light font-futura leading-none;
 }
 
+.principal_title{
+  @apply text-4xl text-center text-oxblood font-futura font-bold;
+}
+
 .experiences ul {
   list-style: inside;
   padding-left: 10px;

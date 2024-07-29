@@ -33,7 +33,7 @@ export default async function Home({ params: { locale }}) {
         <main className="page bg-white py-20">
             <div className='flex flex-col justify-center items-center'>
                 <img src="/assets/images/logo_v3.png" alt="logo" className="w-[100px]" />
-                <h1 className="text-4xl text-center text-oxblood font-futura font-bold">Fam</h1>
+                <h1 className="principal_title">Fam</h1>
                 <div className="flex flex-col justify-center items-center gap-4 pt-10">
                     {
                         nav.map((item, index) => (

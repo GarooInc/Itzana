@@ -31,7 +31,7 @@ return (
                 <Carousel images={images} />
             </div>
             <div className='flex flex-col justify-center items-center w-full h-full bg-white px-10 md:p-14'>
-                <h1 className="text-xl md:text-2xl text-center text-oxblood font-futura font-bold m-2">WELCOME TO ITZ&#39;ANA RESORT &amp; RESIDENCES</h1>
+                <h1 className="principal_title">WELCOME TO ITZ&#39;ANA RESORT &amp; RESIDENCES</h1>
                 <p className="text-center md:text-xl text-md  text-darkgray font-futura font-bold">A Luxury Oasis on the Caribbean Sea</p>
                 <span className="text-center text-darkgray font-futura-light my-4">
                     Escape the ordinary to a breathtaking destination on the Belize coast, where the emerald colors

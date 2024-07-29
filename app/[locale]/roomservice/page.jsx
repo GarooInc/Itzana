@@ -24,7 +24,9 @@ export default async function RoomService({ params: { locale }}) {
                 <div className='flex justify-center items-center gap-4'>
                     <img src="/assets/images/logo_v2.png" alt="logo" className="w-[100px]" />
                 </div>
+                <a href="/cart" className="flex justify-center items-center gap-4">
                 <FaShoppingCart className="text-3xl text-lightgray" />
+                </a>
             </div>
             <Menu />
             <div className="md:w-[40%] w-[90%] h-20 bg-white rounded-tl-2xl rounded-tr-2xl shadow-2xl border-black fixed bottom-0 flex justify-evenly" >
