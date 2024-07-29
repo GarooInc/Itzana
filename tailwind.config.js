@@ -39,6 +39,7 @@
         "redorange": "#FF3D1E",
         "oxblood": "#AE2602",
         "darkgray": "#333333",
+        "aqua":"#1f443a",
       },
       placeholderColor: {
         'custom-green': '#6C7731',

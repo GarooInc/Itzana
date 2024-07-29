@@ -12,15 +12,19 @@ export default async function Home({ params: { locale }}) {
     const nav = [
         {
             title: t('home:nav1'),
-            link: '/home'
+            link: '/welcome'
         },
         {
             title: t('home:nav2'),
-            link: '/home'
+            link: '/experiences'
         },
         {
             title: t('home:nav3'),
-            link: '/home'
+            link: '/roomservice'
+        },
+        {
+            title: "Other Services",
+            link: '/contact'
         }
     ]
 
