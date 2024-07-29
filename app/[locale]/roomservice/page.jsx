@@ -2,11 +2,11 @@ import React from 'react'
 import initTranslations from '@/app/i18n'
 import TranslationsProvider from '@/components/TranslationsProvider'
 import LanguageSwitcher from '@/components/LanguageSwitcher/LanguageSwitcher'
-import { IoIosArrowDropleft } from "react-icons/io"
 import { FaShoppingCart } from "react-icons/fa"
 import Menu from '@/components/Menu/Menu'
 import { TbHome } from "react-icons/tb"
 import { HiOutlineChatBubbleBottomCenterText } from "react-icons/hi2"
+import ArrowBack from '@/components/ArrowBack/ArrowBack'
 
 
 
@@ -20,7 +20,7 @@ export default async function RoomService({ params: { locale }}) {
         <TranslationsProvider locale={locale} namespaces={namespaces} resources={resources}>
         <main className="page bg-white py-20 px-10">
             <div className='flex justify-between items-center w-full py-4'>
-                <IoIosArrowDropleft className="text-3xl text-lightgray" />
+                <ArrowBack />
                 <div className='flex justify-center items-center gap-4'>
                     <img src="/assets/images/logo_v2.png" alt="logo" className="w-[100px]" />
                 </div>

@@ -24,7 +24,7 @@ return (
     <div className="page">
         <div className="flex flex-col w-full h-screen">
             <div className='bg-light-brown w-full flex justify-center items-center h-1/5 relative'>
-                <ArrowBack />
+                <ArrowBack absolute/>
                 <img src="/assets/images/logo_v1.png" alt="logo" className="w-[150px]" />
             </div>
             <div className="w-full md:h-3/5">

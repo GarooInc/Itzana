@@ -4,10 +4,10 @@ import { IoIosArrowDropleft } from "react-icons/io"
 import { useRouter } from "next/navigation"
 
 
-const ArrowBack = () => {
+const ArrowBack = ({absolute}) => {
     const router = useRouter()
   return (
-    <IoIosArrowDropleft className="text-3xl text-lightgray absolute left-10 top-10" onClick={() => router.push('/home')} />
+    <IoIosArrowDropleft className={`text-3xl text-lightgray ${absolute ? 'absolute left-10 top-10' : ''}`} onClick={() => router.back()} />
   )
 }
 
