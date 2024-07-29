@@ -29,19 +29,20 @@ const ExperiencePage = ({params}) => {
 
 
   return (
-    <div className="page bg-white md:py-20 md:px-20 px-10 py-10">
-        <div className='flex flex-col justify-center items-center w-full'>
-            <div className='flex justify-between items-center w-full py-4'>
-                <IoIosArrowDropleft className="text-3xl text-lightgray" onClick={() => router.back()} />
-                <div className='flex justify-center items-center gap-4'>
-                    <img src="/assets/images/logo_v2.png" alt="logo" className="w-[100px]" />
-                </div>
-                <div></div>
+    <div className="page bg-white md:py-20 py-10">
+        <div className='flex flex-col justify-center items-center w-full relative'>
+            <IoIosArrowDropleft className="text-3xl text-lightgray absolute left-10 top-10" onClick={() => router.back()} />
+            <div className='flex justify-center items-center gap-4'>
+                <img src="/assets/images/logo_v2.png" alt="logo" className="w-[100px]" />
             </div>
-            <div className='flex flex-col justify-center items-center gap-4 pt-10'>
-                <h1 className="text-4xl text-center text-oxblood font-futura font-bold">{experience.title}</h1>
-                <img className="md:w-[600px] md:h-80 w-40 h-48 rounded-lg object-cover" src={`https://kaana.garooinc.com/kaana/api/files/${experience.collectionId}/${experience.id}/${experience.image}?token=`} alt={experience.name} />
-                <div className=" text-black font-futura"  dangerouslySetInnerHTML={{ __html: experience.description }}></div>
+            <div className='flex flex-col justify-center items-center gap-4 pt-4 w-full'>
+                <h1 className="text-2xl md:text-4xl text-center text-oxblood font-futura font-bold">{experience.title}</h1>
+                <div className='md:flex flex-col md:flex-row justify-center items-center md:px-10 md:gap-4 w-full'>
+                    <div className='md:w-1/2'>
+                        <img className="w-full object-cover" src={`https://kaana.garooinc.com/kaana/api/files/${experience.collectionId}/${experience.id}/${experience.image}?token=`} alt={experience.name} />
+                    </div>
+                    <div className="text-black md:px-0 px-10 md:w-1/2 gap-4 flex flex-col md:py-0 py-10 experiences"  dangerouslySetInnerHTML={{ __html: experience.description }}></div>
+                </div>
             </div>
         </div>
     </div>

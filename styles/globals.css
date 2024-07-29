@@ -29,3 +29,12 @@
 .text_filter{
   @apply text-center text-black text-xs font-light font-futura leading-none;
 }
+
+.experiences ul {
+  list-style: inside;
+  padding-left: 10px;
+}
+
+.experiences ul li {
+  margin-bottom: 1rem;
+}

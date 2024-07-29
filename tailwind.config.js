@@ -26,7 +26,8 @@
     },
     extend: {
       fontFamily: {
-        'futura': ['futura', 'sans-serif']
+        'futura': ['futura', 'sans-serif'],
+        'futura-light': ['futura-light', 'sans-serif']
       },
       colors: {
         "light-brown": "#C9A86E",
