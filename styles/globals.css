@@ -34,6 +34,14 @@
   @apply md:text-4xl text-2xl text-center text-oxblood font-futura font-bold;
 }
 
+.icon_activities{
+  @apply text-aqua text-lg;
+}
+
+.description_activities{
+  @apply text-black text-xs font-futura;
+}
+
 .experiences ul {
   list-style: inside;
   padding-left: 10px;
