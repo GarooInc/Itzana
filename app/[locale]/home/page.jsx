@@ -23,8 +23,12 @@ export default async function Home({ params: { locale }}) {
             link: '/roomservice'
         },
         {
-            title: "Other Services",
-            link: '/contact'
+            title: "Activities",
+            link: '/activities'
+        },
+        {
+            title: "TV Guide",
+            link: '/tv'
         }
     ]
 
