@@ -2,9 +2,9 @@ import React from 'react'
 import initTranslations from '@/app/i18n'
 import TranslationsProvider from '@/components/TranslationsProvider'
 import LanguageSwitcher from '@/components/LanguageSwitcher/LanguageSwitcher'
-import ArrowBack from '@/components/ArrowBack/ArrowBack'
 import Carousel from '@/components/Carousel/Carousel'
 import ChatBubble from '@/components/ChatBubble/ChatBubble'
+import HeaderItem from '@/components/HeaderItem/HeaderItem'
 
 
 
@@ -14,7 +14,6 @@ export default async function Welcome({ params: { locale }}) {
     const { t, resources } = await initTranslations(locale, namespaces)
     const images = []
 
-    //lista de imagenes que estan en la carpeta public/assets/images/welcome
     for (let i = 2; i < 9; i++) {
         images.push(`/assets/images/welcome/welcome${i}.jpg`)
     }
@@ -23,10 +22,7 @@ return (
     <TranslationsProvider locale={locale} namespaces={namespaces} resources={resources}>
     <div className="page">
         <div className="flex flex-col w-full h-screen">
-            <div className='bg-light-brown w-full flex justify-center items-center h-1/5 relative'>
-                <ArrowBack absolute/>
-                <img src="/assets/images/logo_v1.png" alt="logo" className="w-[150px]" />
-            </div>
+            <HeaderItem />
             <div className="w-full md:h-3/5">
                 <Carousel images={images} />
             </div>

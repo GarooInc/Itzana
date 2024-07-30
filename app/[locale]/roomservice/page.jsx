@@ -9,11 +9,11 @@ import { HiOutlineChatBubbleBottomCenterText } from "react-icons/hi2"
 import ArrowBack from '@/components/ArrowBack/ArrowBack'
 
 
-
 const namespaces = ['room-service', 'header']
 
 export default async function RoomService({ params: { locale }}) {
     const { t, resources } = await initTranslations(locale, namespaces)
+
 
 
     return (

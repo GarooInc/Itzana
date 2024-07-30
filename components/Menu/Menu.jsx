@@ -2,9 +2,13 @@
 import React, {useState, useEffect} from 'react'
 import PocketBase from 'pocketbase'
 import { useCart } from '@/contexts/CartContext'
+import CartNotification from '@/components/CartNotification/CartNotification'
+
 
 const Menu = () => {
     const [food, setFood] = useState([])
+    const [notification, setNotification] = useState(false)
+    const [actualProduct, setActualProduct] = useState({})
 
     const { dispatch } = useCart()
 
@@ -29,6 +33,11 @@ const Menu = () => {
 
     const addTocart = (item) => {
         dispatch({ type: 'ADD_ITEM', payload: item })
+        setNotification(true)
+        setActualProduct(item)
+        setTimeout(() => {
+            setNotification(false)
+        }, 3000)
     }
 
   return (
@@ -42,6 +51,7 @@ const Menu = () => {
                 <button className="rounded shadow justify-start items-center text-xs inline-flex font-futura bg-light-brown text-lightgray px-2 py-1 absolute bottom-2 right-2" onClick={() => addTocart(item)}>Add to cart</button>
             </div>
         )) }
+        {notification && <CartNotification productName={actualProduct.Title} productImage={`https://kaana.garooinc.com/kaana/api/files/${actualProduct.collectionId}/${actualProduct.id}/${actualProduct.Image}?token=`} />}
     </div>
   )
 }
