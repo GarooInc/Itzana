@@ -80,7 +80,7 @@ const Menu = () => {
                     <button className="rounded shadow justify-start items-center text-xs inline-flex font-futura bg-light-brown text-lightgray px-2 py-1 absolute bottom-2 right-2" onClick={() => addToCart(item)}>Add to cart</button>
                 </div>
             ))}
-            {notification && <CartNotification productName={actualProduct.Title} productImage={`https://kaana.garooinc.com/kaana/api/files/${actualProduct.collectionId}/${actualProduct.id}/${actualProduct.Image}?token=`} />}
+            {notification && <CartNotification productName={actualProduct.Title} productImage={`https://kaana.garooinc.com/kaana/api/files/${actualProduct.collectionId}/${actualProduct.id}/${actualProduct.Image}?token=`} productVariant={actualProduct.Variant} />}
         </div>
     );
 };
