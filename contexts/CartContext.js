@@ -7,8 +7,8 @@ function cartReducer(state, action) {
     switch (action.type) {
         case 'ADD_ITEM':
             //si ya existe el item en el carrito, se incrementa la cantidad
-            if (state.items.find(item => item.id === action.payload.id)) {
-                return { ...state, items: state.items.map(item => item.id === action.payload.id ? { ...item, quantity: item.quantity + 1 } : item) };
+            if (state.items.find(item => item.id === action.payload.id && item.Variant === action.payload.Variant)) {
+                return { ...state, items: state.items.map(item => item.id === action.payload.id  ? { ...item, quantity: item.quantity + 1 } : item) };
             }
             return { ...state, items: [...state.items, { ...action.payload, quantity: 1 }] };
         case 'INCREASE_ITEM':

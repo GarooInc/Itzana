@@ -16,11 +16,12 @@ const CartItem = () => {
                             <button className="rounded shadow justify-start items-center text-xs inline-flex font-futura bg-redorange text-white px-2 py-1 absolute left-2" onClick={() => dispatch({ type: 'REMOVE_ITEM', payload: item })}>X</button>
                             <img className="md:w-full md:h-32 w-40 h-48 rounded-lg object-cover" src={`https://kaana.garooinc.com/kaana/api/files/${item.collectionId}/${item.id}/${item.Image}?token=`} alt={item.name} />
                             <h3 className="text-black text-base leading-tight font-futura mt-2  w-full gap-4 flex">{item.Title} <span className='text-aqua'>£{item.Price}</span></h3>
-                            <p className="text-black text-xs font-[futura light] leading-none">{item.Description}</p>
+                            <p className="text-black text-xs font-futura leading-none">{item.Description}</p>
+                            <p className='text-gray text-xs font-futura leading-none'>Variant: {item.Variant}</p>
                             <div className="flex justify-between items-center absolute bottom-2">
                                 <div className="flex justify-between items-center shadow-xl w-full">
                                         <button className="rounded shadow justify-start items-center text-xs inline-flex font-futura  text-aqua px-2 py-1" onClick={() => dispatch({ type: 'DECREASE_ITEM', payload: item })}>-</button>
-                                        <p className="text-black text-xs font-[futura light] leading-none px-4">{item.quantity}</p>
+                                        <p className="text-black text-xs font-futura leading-none px-4">{item.quantity}</p>
                                         <button className="rounded shadow justify-start items-center text-xs inline-flex font-futura text-aqua px-2 py-1" onClick={() => dispatch({ type: 'INCREASE_ITEM', payload: item })}>+</button>
                                 </div>
                             </div>

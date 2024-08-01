@@ -14,7 +14,7 @@ export default async function Activities({ params: { locale }}) {
 return (
     <TranslationsProvider locale={locale} namespaces={namespaces} resources={resources}>
         <div className="page bg-white">
-            <div className="flex flex-col w-full h-screen items-center">
+            <div className="flex flex-col w-full items-center">
                 <HeaderItem namePage={t('header:activities')} />
                 <div className="md:w-1/2 w-3/4  bg-white rounded-lg shadow p-4 my-10 font-futura text-black text-center">
                     Find ocean-view rooms, eclectic cuisine, and sparkling pools along the Caribbean Sea. Explore our all-inclusive resort ahead of your stay and
