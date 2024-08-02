@@ -23,7 +23,7 @@ export default async function RoomService({ params: { locale }}) {
             <Menu />
             <div className="md:w-[40%] w-[90%] h-20 bg-white rounded-tl-2xl rounded-tr-2xl shadow-2xl border-black fixed bottom-0 flex justify-evenly" >
                 <div className="flex justify-center items-center gap-4 flex-col">
-                    <a href="/home" className="flex justify-center items-center gap-4">
+                    <a href="/" className="flex justify-center items-center gap-4">
                         <TbHome className="text-3xl text-lightgray" />
                     </a>
                     <p className="text-xs text-lightgray font-futura">Home</p>

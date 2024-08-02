@@ -16,7 +16,7 @@ return (
         <div className="page bg-white py-20 md:px-20 px-10">
             <ArrowBack absolute/>
             <div className='flex flex-col justify-center items-center'>
-                <img src="/assets/images/logo_v3.png" alt="logo" className="w-[100px]" />
+                <img src="/assets/images/logo_v1.png" alt="logo" className="w-[150px]" />
                 <h1 className="principal_title">Experiences</h1>
             </div>
             <ExperiencesItem />

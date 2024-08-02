@@ -1,29 +1,53 @@
-import initTranslations from '../i18n';
+import React from 'react'
+import initTranslations from '@/app/i18n'
 import TranslationsProvider from '@/components/TranslationsProvider'
 import LanguageSwitcher from '@/components/LanguageSwitcher/LanguageSwitcher'
-import Input from '@/components/Input/Input';
+import ButtonNav from '@/components/ButtonNav/ButtonNav'
+import ChatBubble from '@/components/ChatBubble/ChatBubble'
 
+const namespaces = ['home', 'header']
 
-const namespaces = ['room', 'header'];
 export default async function Home({ params: { locale }}) {
-  const { t, resources } = await initTranslations(locale, namespaces)
-  return (
-    <TranslationsProvider locale={locale} namespaces={namespaces} resources={resources}>
-      <main className="page">
-        <div className="flex flex-col w-full h-screen">
-          <div className='bg-light-brown w-full flex justify-center items-center h-1/2'>
-            <img src="/assets/images/logo_v1.png" alt="logo" className="w-[150px]" />
-          </div>
-          <div className='bg-white w-full h-1/2 flex flex-col justify-start items-center py-10'>
-            <span className="text-2xl text-lightgray w-full text-center">{t('room:form_title')}</span>
-            <div className="w-full flex flex-col items-center gap-2 pt-10">
-              <Input text={t('room:form_input1')} />
-              <Input text={t('room:form_input2')} />
+    const { t, resources } = await initTranslations(locale, namespaces)
+    const nav = [
+        {
+            title: t('home:nav1'),
+            link: '/welcome'
+        },
+        {
+            title: t('home:nav2'),
+            link: '/experiences'
+        },
+        {
+            title: t('home:nav3'),
+            link: '/roomservice'
+        },
+        {
+            title: "Activities",
+            link: '/activities'
+        },
+        {
+            title: "TV Guide",
+            link: '/tv'
+        }
+    ]
+
+    return (
+        <TranslationsProvider locale={locale} namespaces={namespaces} resources={resources}>
+        <main className="page bg-white py-20">
+            <div className='flex flex-col justify-center items-center'>
+                <img src="/assets/images/logo_v3.png" alt="logo" className="w-[150px]" />
+                <div className="flex flex-col justify-center items-center gap-4 pt-10">
+                    {
+                        nav.map((item, index) => (
+                            <ButtonNav key={index} title={item.title} link={item.link} />
+                        ))
+                    }
+                </div>
             </div>
-          </div>
-        </div>
-      </main>
-    <LanguageSwitcher />
-    </TranslationsProvider>
-  );
+            <ChatBubble />
+        </main>
+        <LanguageSwitcher />
+        </TranslationsProvider>
+    );
 }
