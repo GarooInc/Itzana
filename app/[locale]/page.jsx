@@ -19,7 +19,7 @@ export default async function Home({ params: { locale }}) {
             link: '/experiences'
         },
         {
-            title: t('home:nav3'),
+            title: "Room Service",
             link: '/roomservice'
         },
         {
@@ -34,11 +34,19 @@ export default async function Home({ params: { locale }}) {
             title: "FAQs",
             link: '/faqs'
         },
+        {
+            title: "Adventures",
+            link: '/adventures'
+        },
+        {
+            title: "Food & Drinks",
+            link: '/food_drinks'
+        }
     ]
 
     return (
         <TranslationsProvider locale={locale} namespaces={namespaces} resources={resources}>
-        <main className="page bg-white py-20">
+        <main className="page bg-white py-10">
             <div className='flex flex-col justify-center items-center'>
                 <img src="/assets/images/logo_v3.png" alt="logo" className="w-[150px]" />
                 <div className="flex flex-col justify-center items-center gap-4 pt-10">

@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation"
 const ArrowBack = ({absolute}) => {
     const router = useRouter()
   return (
-    <IoIosArrowDropleft className={`text-3xl text-lightgray cursor-pointer ${absolute ? 'absolute left-10 top-10' : ''}`} onClick={() => router.push('/')} />
+    <IoIosArrowDropleft className={`text-3xl text-lightgray cursor-pointer ${absolute ? 'absolute left-10 top-10 z-10' : ''}`} onClick={() => router.push('/')} />
   )
 }
 
