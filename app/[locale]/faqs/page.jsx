@@ -49,7 +49,7 @@ return (
         <div className="page bg-white">
             <div className="flex flex-col w-full items-center">
                 <HeaderItem namePage="Faqs" />
-                <div className='flex flex-col justify-center items-center gap-4 pt-10 md:w-3/4'>
+                <div className='flex flex-col justify-center items-center gap-4 py-10 md:w-3/4'>
                 {
                     faqs.map((item, index) => (
                         <div className="collapse collapse-arrow bg-light-brown" key={index}>
