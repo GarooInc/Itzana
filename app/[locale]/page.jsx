@@ -19,13 +19,22 @@ export default async function Home({ params: { locale }}) {
             link: '/experiences'
         },
         {
-            title: "Room Service",
-            link: '/roomservice'
+            title: "Food & Drinks",
+            link: '/food_drinks'
         },
         {
             title: "Activities",
             link: '/activities'
         },
+        {
+            title: "Adventures",
+            link: '/adventures'
+        },
+        {
+            title: "Room Service",
+            link: '/roomservice'
+        },
+
         {
             title: "TV Guide",
             link: '/tv'
@@ -33,14 +42,6 @@ export default async function Home({ params: { locale }}) {
         {
             title: "FAQs",
             link: '/faqs'
-        },
-        {
-            title: "Adventures",
-            link: '/adventures'
-        },
-        {
-            title: "Food & Drinks",
-            link: '/food_drinks'
         }
     ]
 
