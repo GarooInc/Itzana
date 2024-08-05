@@ -48,7 +48,7 @@ return (
     <TranslationsProvider locale={locale} namespaces={namespaces} resources={resources}>
         <div className="page bg-white">
             <div className="flex flex-col w-full items-center">
-                <HeaderItem namePage="Faqs" />
+                <HeaderItem namePage="FAQs" />
                 <div className='flex flex-col justify-center items-center gap-4 py-10 md:w-3/4'>
                 {
                     faqs.map((item, index) => (
