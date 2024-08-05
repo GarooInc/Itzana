@@ -29,7 +29,11 @@ export default async function Home({ params: { locale }}) {
         {
             title: "TV Guide",
             link: '/tv'
-        }
+        },
+        {
+            title: "FAQs",
+            link: '/faqs'
+        },
     ]
 
     return (
