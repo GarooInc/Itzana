@@ -14,7 +14,7 @@ export default async function FoodDrinks({ params: { locale }}) {
 return (
     <TranslationsProvider locale={locale} namespaces={namespaces} resources={resources}>
         <div className="page bg-white">
-            <ArrowBack absolute/>
+            <ArrowBack absolute white={true} />
             <FoodDrinksItem />
 
         </div>
