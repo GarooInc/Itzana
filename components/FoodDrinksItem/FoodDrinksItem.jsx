@@ -21,9 +21,8 @@ const FoodDrinksItem = () => {
         const fetchData = async () => {
             try {
                 const records = await pb.collection('Food_Drinks').getFullList({
-                    sort: '-created',
+                    sort: 'order_num',
                 });
-                console.log(records);
                 setFoodDrinks(records);
             } catch (error) {
                 console.error("Error fetching data: ", error);
