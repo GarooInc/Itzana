@@ -4,6 +4,7 @@ import TranslationsProvider from '@/components/TranslationsProvider'
 import LanguageSwitcher from '@/components/LanguageSwitcher/LanguageSwitcher'
 import ButtonNav from '@/components/ButtonNav/ButtonNav'
 import ChatBubble from '@/components/ChatBubble/ChatBubble'
+import { HiInformationCircle } from "react-icons/hi2"
 
 const namespaces = ['home', 'header']
 
@@ -61,6 +62,9 @@ export default async function Home({ params: { locale }}) {
             <ChatBubble />
         </main>
         <LanguageSwitcher />
+        <a href='https://garooinc.com/' className="fixed top-10 left-10">
+            <HiInformationCircle className="info-icon text-4xl text-lightgray" />
+        </a>
         </TranslationsProvider>
     );
 }
