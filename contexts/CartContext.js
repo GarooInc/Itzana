@@ -14,7 +14,8 @@ function cartReducer(state, action) {
         case 'INCREASE_ITEM':
             return { ...state, items: state.items.map(item => item.id === action.payload.id ? { ...item, quantity: item.quantity + 1 } : item) };
         case 'DECREASE_ITEM':
-            return { ...state, items: state.items.map(item => item.id === action.payload.id ? { ...item, quantity: item.quantity - 1 } : item) };
+            return { ...state, items: state.items.map(item => item.id === action.payload.id ? { ...item, quantity: item.quantity - 1 } : item).filter(item => item.quantity > 0)
+            };
         case 'REMOVE_ITEM':
             return { ...state, items: state.items.filter(item => item.id !== action.payload.id) };
         case 'LOAD_ITEMS':

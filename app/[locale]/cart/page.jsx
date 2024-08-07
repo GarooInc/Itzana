@@ -14,7 +14,7 @@ export default async function Cart({ params: { locale }}) {
 return (
     <TranslationsProvider locale={locale} namespaces={namespaces} resources={resources}>
         <div className="page bg-white py-20 md:px-20 px-10 relative">
-            <ArrowBack absolute/>
+            <ArrowBack absolute nav="/roomservice" />
             <CartItem />
         </div>
         <LanguageSwitcher />

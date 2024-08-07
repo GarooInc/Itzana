@@ -60,7 +60,7 @@ const Menu = () => {
     return (
         <div className="grid grid-cols-2 gap-4 md:grid-cols-4 grid-flow-row-dense auto-rows-auto py-20 px-10">
             {food.map((item, index) => (
-                <div key={index} className={`bg-white px-2 pb-12 shadow rounded-lg gap-2 flex flex-col relative ${index % 3 === 0 ? 'mb-6 ' : ''}`}>
+                <div key={index} className={`bg-white px-2 pb-12 shadow rounded-lg gap-2 flex flex-col relative ${index % 3 === 0 ? 'mb-6 md:m-0 ' : ''}`}>
                     <img className="md:w-full md:h-32 w-40 h-48 rounded-lg object-cover" src={`https://kaana.garooinc.com/kaana/api/files/${item.collectionId}/${item.id}/${item.Image}?token=`} alt={item.name} />
                     <h3 className="text-black text-base leading-tight font-futura mt-2">{item.Title}</h3>
                     <p className="text-black text-xs font-[futura light] leading-none">{item.Description}</p>
