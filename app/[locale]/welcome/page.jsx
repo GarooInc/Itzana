@@ -22,14 +22,14 @@ return (
     <TranslationsProvider locale={locale} namespaces={namespaces} resources={resources}>
     <div className="page">
         <div className="flex flex-col w-full h-screen">
-            <HeaderItem />
+            <HeaderItem v={"v2"}/>
             <div className="w-full md:h-3/5">
                 <Carousel images={images} />
             </div>
-            <div className='flex flex-col justify-center items-center w-full h-full bg-white p-10 md:p-14'>
+            <div className='flex flex-col justify-center items-center w-full h-full bg-green p-10 md:p-14'>
                 <h1 className="principal_title">WELCOME TO ITZ&#39;ANA RESORT &amp; RESIDENCES</h1>
-                <p className="text-center md:text-xl text-md  text-darkgray font-futura font-bold">A Luxury Oasis on the Caribbean Sea</p>
-                <span className="text-black text-md font-futuralight text-center leading-6 tracking-tight my-4">
+                <p className="text-center md:text-xl text-md  text-light-brown font-futura font-bold">A Luxury Oasis on the Caribbean Sea</p>
+                <span className="text-cream text-md font-futuralight text-center leading-6 tracking-tight my-4">
                     Escape the ordinary to a breathtaking destination on the Belize coast, where the emerald colors
                     of the Caribbean Sea and the rhythm of the Mayan jungle create an oasis of relaxation and
                     adventure. Relax on the white sand beach. Enjoy local cuisine fresh from the garden. Renew

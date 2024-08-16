@@ -30,9 +30,10 @@
         'futura-light': ['futura-light', 'sans-serif']
       },
       colors: {
-        "light-brown": "#C9A86E",
+        "light-brown": "#9d8973",
         "brown": "#917136",
-        "green": "#6C7731",
+        "cream": "#ebe7dd",
+        "green": "#28433a",
         "lightgreen": "#bad056",
         "lightgray": "#555347",
         "lightgreen": "#BAD056",

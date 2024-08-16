@@ -31,7 +31,7 @@
 }
 
 .principal_title{
-  @apply md:text-4xl text-2xl text-center text-oxblood font-futura font-bold;
+  @apply md:text-4xl text-2xl text-center text-light-brown font-futura font-bold;
 }
 
 .icon_activities{
