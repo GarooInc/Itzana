@@ -4,6 +4,7 @@ import TranslationsProvider from '@/components/TranslationsProvider'
 import LanguageSwitcher from '@/components/LanguageSwitcher/LanguageSwitcher'
 import ExperiencesItem from '@/components/ExperiencesItem/ExperiencesItem'
 import ArrowBack from '@/components/ArrowBack/ArrowBack'
+import HeaderItem from '@/components/HeaderItem/HeaderItem'
 
 
 const namespaces = ['experiences', 'header']
@@ -13,12 +14,9 @@ export default async function Experiences({ params: { locale }}) {
 
 return (
     <TranslationsProvider locale={locale} namespaces={namespaces} resources={resources}>
-        <div className="page bg-white py-20 md:px-20 px-10">
-            <ArrowBack absolute/>
-            <div className='flex flex-col justify-center items-center'>
-                <img src="/assets/images/logo_v1.png" alt="logo" className="w-[150px]" />
-                <h1 className="principal_title">Experiences</h1>
-            </div>
+        <HeaderItem v={"v5"}/>
+        <div className="page bg-white py-10 md:px-20 px-10">
+            <h1 className="principal_title">Amenities</h1>
             <ExperiencesItem />
         </div>
         <LanguageSwitcher />

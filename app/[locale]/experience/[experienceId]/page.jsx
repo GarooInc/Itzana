@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react'
 import PocketBase from 'pocketbase'
 import { IoIosArrowDropleft } from "react-icons/io"
 import { useRouter } from "next/navigation"
+import HeaderItem from '@/components/HeaderItem/HeaderItem'
+import FooterItem from '@/components/FooterItem/FooterItem'
 
 const ExperiencePage = ({params}) => {
     const [experience, setExperience] = useState('')
@@ -29,22 +31,22 @@ const ExperiencePage = ({params}) => {
 
 
   return (
-    <div className="page bg-white md:py-20 py-10">
+    <div className="page bg-white">
         <div className='flex flex-col justify-center items-center w-full relative'>
-            <IoIosArrowDropleft className="text-3xl text-lightgray absolute left-10 top-10" onClick={() => router.back()} />
-            <div className='flex justify-center items-center gap-4'>
-                <img src="/assets/images/logo_v2.png" alt="logo" className="w-[100px]" />
-            </div>
-            <div className='flex flex-col justify-center items-center gap-4 pt-4 w-full'>
-                <h1 className="text-2xl md:text-4xl text-center text-oxblood font-futura font-bold">{experience.title}</h1>
-                <div className='md:flex flex-col md:flex-row justify-center items-center md:px-10 md:gap-4 w-full'>
+            <HeaderItem v={"v4"} />
+            <div className='flex flex-col justify-center items-center pt-4 w-full'>
+                <div className='md:flex flex-col md:flex-row justify-center w-full items-stretch'>
                     <div className='md:w-1/2'>
                         <img className="w-full object-cover" src={`https://kaana.garooinc.com/kaana/api/files/${experience.collectionId}/${experience.id}/${experience.image}?token=`} alt={experience.name} />
                     </div>
-                    <div className="text-black md:px-0 px-10 md:w-1/2 gap-4 flex flex-col md:py-0 py-10 experiences"  dangerouslySetInnerHTML={{ __html: experience.description }}></div>
+                    <div className='p-10 bg-cream md:min-h-full md:w-1/2 flex flex-col justify-center'>
+                        <h1 className="text-2xl md:text-4xl text-start text-light-brown font-futura font-bold">{experience.title}</h1>
+                        <div className="text-black md:px-0 gap-4 flex flex-col experiences" dangerouslySetInnerHTML={{ __html: experience.description }}></div>
+                    </div>
                 </div>
             </div>
         </div>
+        <FooterItem />
     </div>
 
   )
