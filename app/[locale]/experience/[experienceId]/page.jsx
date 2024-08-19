@@ -33,7 +33,7 @@ const ExperiencePage = ({params}) => {
   return (
     <div className="page bg-white">
         <div className='flex flex-col justify-center items-center w-full relative'>
-            <HeaderItem v={"v4"} />
+            <HeaderItem v={"v4"} nav={'/experiences'} />
             <div className='flex flex-col justify-center items-center pt-4 w-full'>
                 <div className='md:flex flex-col md:flex-row justify-center w-full items-stretch'>
                     <div className='md:w-1/2'>
