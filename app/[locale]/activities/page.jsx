@@ -4,6 +4,7 @@ import TranslationsProvider from '@/components/TranslationsProvider'
 import LanguageSwitcher from '@/components/LanguageSwitcher/LanguageSwitcher'
 import HeaderItem from '@/components/HeaderItem/HeaderItem'
 import ActivitiesItem from '@/components/ActivitiesItem/ActivitiesItem'
+import FooterItem from '@/components/FooterItem/FooterItem'
 
 
 const namespaces = ['activities', 'header']
@@ -13,7 +14,7 @@ export default async function Activities({ params: { locale }}) {
 
 return (
     <TranslationsProvider locale={locale} namespaces={namespaces} resources={resources}>
-        <div className="page bg-white">
+        <div className="page bg-white relative">
             <div className="flex flex-col w-full items-center">
                 <HeaderItem v={"v4"} />
                 <div className="w-full  bg-cream rounded-lg shadow p-10 my-10 font-futura text-black text-center flex flex-col justify-center items-center gap-4">
@@ -25,6 +26,7 @@ return (
                 </div>
                 <ActivitiesItem />
             </div>
+            <FooterItem />
         </div>
         <LanguageSwitcher />
     </TranslationsProvider>

@@ -5,7 +5,6 @@ import { FaLocationDot } from "react-icons/fa6"
 import { FaRegCalendar } from "react-icons/fa6"
 
 
-
 const ActivitiesItem = () => {
     const [activities, setActivities] = useState([])
 
@@ -30,18 +29,18 @@ const ActivitiesItem = () => {
 
 
   return (
-    <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 grid-flow-row-dense auto-rows-auto px-10 py-10">
+    <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 grid-flow-row-dense auto-rows-auto px-10 py-10">
         { 
             activities.map((item, index) => (
-                <div key={index} className={`bg-white h-40 shadow rounded-lg gap-2 flex relative`}>
-                    <img className=" w-2/5 md:h-full w-40 rounded-lg object-cover" src={`https://kaana.garooinc.com/kaana/api/files/${item.collectionId}/${item.id}/${item.Image}?token=`} alt={item.name} />
+                <div key={index} className={`bg-white px-2 pb-12 gap-2 flex flex-col relative cursor-pointer ${(index + 1) % 4 !== 0 ? 'md:border-r md:border-black' : ''} ${(index + 1) % 2 !== 0 ? 'md:border-r md:border-black' : ''}`}>
+                    <img className="w-full md:h-60 h-60 object-cover" src={`https://kaana.garooinc.com/kaana/api/files/${item.collectionId}/${item.id}/${item.Image}?token=`} alt={item.name} />
                     <div className='flex flex-col gap-4  w-3/5'>
                         <h3 className="text-black text-lg leading-tight font-futura mt-2">{item.Title}</h3>
-                        <div className="flex items-center text-black leading-none gap-2">
-                            <FaLocationDot className="icon_activities text-md" />
+                        <div className="flex items-center leading-none gap-2">
+                            <FaLocationDot className="icon_activities text-md " />
                             <p className='text-black text-md font-futuralight leading-6 tracking-tight'>{item.Location}</p>
                         </div>
-                        <div className="flex items-center text-black leading-none gap-2">
+                        <div className="flex items-center leading-none gap-2">
                             <FaRegCalendar className="icon_activities text-md" />
                             <p className='text-black text-md font-futuralight leading-6 tracking-tight'>{item.Date}</p>
                         </div>

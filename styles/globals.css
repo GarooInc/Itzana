@@ -35,7 +35,7 @@
 }
 
 .icon_activities{
-  @apply text-aqua text-lg;
+  @apply text-light-brown text-lg;
 }
 
 .description_activities{
