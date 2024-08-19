@@ -15,10 +15,13 @@ return (
     <TranslationsProvider locale={locale} namespaces={namespaces} resources={resources}>
         <div className="page bg-white">
             <div className="flex flex-col w-full items-center">
-                <HeaderItem namePage="Activities" />
-                <div className="md:w-1/2 w-3/4  bg-white rounded-lg shadow p-4 my-10 font-futura text-black text-center">
-                    Find ocean-view rooms, eclectic cuisine, and sparkling pools along the Caribbean Sea. Explore our all-inclusive resort ahead of your stay and
-                    imagine what&apos;s possible.
+                <HeaderItem v={"v4"} />
+                <div className="w-full  bg-cream rounded-lg shadow p-10 my-10 font-futura text-black text-center flex flex-col justify-center items-center gap-4">
+                    <h2 className='text-2xl font-bold text-light-brown'>Activities</h2>
+                    <span className='md:w-1/3 w-full flex justify-center'>
+                        Find ocean-view rooms, eclectic cuisine, and sparkling pools along the Caribbean Sea. Explore our all-inclusive resort ahead of your stay and
+                        imagine what&apos;s possible.
+                    </span>
                 </div>
                 <ActivitiesItem />
             </div>

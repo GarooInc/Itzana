@@ -13,10 +13,11 @@ const ButtonNav = ({title, link}) => {
     }
   return (
     <div className="w-80 h-16 cursor-pointer">
-        <div className="p-4 flex justify-between font-futura font-light text-darkgray bg-white rounded-full border border-darkgray" onClick={handleClick}>
-            {title} <FaArrowRight className="inline-block" />
-        </div>
-    </div>
+      <div className="p-4 flex font-futura font-light text-cream bg-light-brown/60 rounded-full" onClick={handleClick}>
+          <span className='flex justify-between w-full'>{title} <FaArrowRight className="inline-block" /></span>
+      </div>
+  </div>
+
   )
 }
 
