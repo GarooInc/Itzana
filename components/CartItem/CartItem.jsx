@@ -78,7 +78,7 @@ const CartItem = ({showCart}) => {
 
 
     return (
-        <div className="bg-cream w-80 md:p-10 py-10 px-4 h-screen">
+        <div className="bg-cream w-80 md:w-[400px] md:p-10 py-10 px-4 h-screen">
             <div className="flex justify-between items-center">
                 <img src="/assets/images/room_service/cart.png" alt="logo" className="w-[50px]" />
                 <button onClick={() => showCart(false)}><TfiClose className="text-black text-2xl" /></button>
