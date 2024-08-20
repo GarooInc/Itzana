@@ -59,6 +59,10 @@
   margin-bottom: 1rem;
 }
 
+.green_button{
+  @apply text-green border-2 border-green rounded-full px-6 py-2 mt-2 text-sm font-futura;
+}
+
 .background {
   background-image: url('/assets/images/patron.png');
   background-size: cover;

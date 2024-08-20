@@ -27,14 +27,14 @@ const AdventuresItem = () => {
 
 
     return (
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-3 grid-flow-row-dense auto-rows-auto py-10 md:px-10">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-4 grid-flow-row-dense auto-rows-auto md:px-10 py-20">
             {adventures.map((item, index) => (
-                <div key={index} className={`bg-white px-2 pb-16 shadow rounded-lg gap-2 flex flex-col relative`}>
-                    <img className="md:w-full md:h-32 w-full h-48 md:h-52 rounded-lg object-cover" src={`https://kaana.garooinc.com/kaana/api/files/${item.collectionId}/${item.id}/${item.image}?token=`} alt={item.name} />
-                    <h3 className="text-black text-xl leading-tight font-futura mt-2">{item.title}</h3>
+                <div key={index} className={`bg-white px-2 pb-16 gap-2 flex flex-col relative ${(index + 1) % 4 !== 0 ? 'md:border-r md:border-black' : ''} ${(index + 1) % 2 !== 0 ? 'md:border-r md:border-black' : ''}`}>
+                    <img className="md:w-full md:h-32 w-full h-48 md:h-52 object-cover" src={`https://kaana.garooinc.com/kaana/api/files/${item.collectionId}/${item.id}/${item.image}?token=`} alt={item.name} />
+                    <h3 className="text-light-brown text-xl leading-tight font-tiempos mt-2">{item.title}</h3>
                     <p className="text-black text-md font-futuralight leading-6 tracking-tight">{item.short_Description}</p>
-                    <p className="text-lightgray text-xs font-light leading-none font-futura absolute bottom-2 left-2"> £{item.price}</p>
-                    <button className='text-white bg-aqua p-2 rounded  absolute bottom-2 right-2 font-futura'>Request a reservation</button>
+                    <p className="text-light-brown text-xs  leading-none font-futura font-bold"> £{item.price}</p>
+                    <button className='green_button w-[200px] absolute bottom-2'>Request a reservation</button>
                 </div>
             ))}
         </div>
