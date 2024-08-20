@@ -17,7 +17,7 @@ return (
     <TranslationsProvider locale={locale} namespaces={namespaces} resources={resources}>
         <HeaderItem v={"v5"} />
         <div className="page bg-white">
-            <h1 className="principal_title">Food & Drinks</h1>
+            <h1 className="italictiempos_title">Food & Drinks</h1>
             <FoodDrinksItem />
         </div>
         <LanguageSwitcher />

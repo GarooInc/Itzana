@@ -41,15 +41,15 @@ const FoodDrinksItem = () => {
                     <div className='flex flex-col p-10  bg-cream gap-4'>
                         <h3 className="md:text-4xl text-2xl leading-tight font-futura mt-2 text-light-brown">{item.name}</h3>
                         <div className='flex flex-col gap-4 border-b border-light-brown py-2'>
-                            <span className='text-black text-md font-futuralight leading-6 tracking-tight text-justify'>{item.description}</span>
+                            <span className='text-black text-md font-tiempos leading-6 text-justify'>{item.description}</span>
                         </div>
                         <div className='flex flex-col gap-2 justify-end items-start'>
-                                <p className="text-black text-md font-futuralight leading-none flex gap-2">
-                                    <MdLocationPin className="text-light-brown" />
+                                <p className="text-black text-md font-futura leading-none flex gap-2 font-medium">
+                                    <MdLocationPin className="text-light-brown text-md" />
                                     {item.location}
                                 </p>
-                                <p className="text-black text-md font-futuralight leading-none flex gap-2">
-                                    <TbClockHour3Filled className="text-light-brown" />
+                                <p className="text-black text-md font-futuralight leading-none flex gap-2 font-medium">
+                                    <TbClockHour3Filled className="text-light-brown text-md" />
                                     {item.open} - {item.closes}
                                 </p>
                                 <button className='text-green border-2 border-green rounded-full px-6 py-2 mt-2' onClick={() => openPdf(item)}>Menú</button>

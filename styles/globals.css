@@ -38,6 +38,10 @@
   @apply text-center text-4xl text-light-brown font-tiempos italic;
 }
 
+.tiempos_description{
+  @apply text-black font-tiempos leading-none flex gap-2 font-medium text-lg;
+}
+
 .icon_activities{
   @apply text-light-brown text-lg;
 }
