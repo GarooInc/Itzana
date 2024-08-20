@@ -1,9 +1,22 @@
 @font-face {
     font-family: 'futura';
-    src: url('futur.ttf') format('truetype');
+    src: url('FUTURA55REGULAR.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
   }
+
+  @font-face {
+    font-family: 'tiempos';
+    src: url('TiemposText-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+    @font-face {
+        font-family: 'tiempos';
+        src: url('TiemposText-Italic.ttf') format('truetype');
+        font-style: italic;
+    }
 
 @font-face {
     font-family: 'futura';

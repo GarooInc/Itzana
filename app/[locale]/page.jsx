@@ -48,7 +48,7 @@ export default async function Home({ params: { locale }}) {
 
     return (
         <TranslationsProvider locale={locale} namespaces={namespaces} resources={resources}>
-        <main className="page bg-green pt-10 pb-20 md:py-10">
+        <main className="page bg-green pt-10 pb-20 md:py-10 background">
             <div className='flex flex-col justify-center items-center'>
                 <img src="/assets/images/logo_v6.png" alt="logo" className="w-[150px]" />
                 <div className="flex flex-col justify-center items-center gap-4 pt-10">

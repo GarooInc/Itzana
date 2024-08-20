@@ -31,7 +31,11 @@
 }
 
 .principal_title{
-  @apply md:text-4xl text-2xl text-center text-light-brown font-futura font-bold;
+  @apply md:text-4xl text-2xl text-center text-light-brown font-futura;
+}
+
+.italictiempos_title{
+  @apply text-center text-4xl text-light-brown font-tiempos italic;
 }
 
 .icon_activities{
@@ -49,4 +53,11 @@
 
 .experiences ul li {
   margin-bottom: 1rem;
+}
+
+.background {
+  background-image: url('/assets/images/patron.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }

@@ -27,7 +27,8 @@
     extend: {
       fontFamily: {
         'futura': ['futura', 'sans-serif'],
-        'futura-light': ['futura-light', 'sans-serif']
+        'futura-light': ['futura-light', 'sans-serif'],
+        'tiempos': ['tiempos', 'serif'],
       },
       colors: {
         "light-brown": "#9d8973",

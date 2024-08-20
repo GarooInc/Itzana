@@ -29,9 +29,19 @@ const ExperiencePage = ({params}) => {
         fetchData()
     }, [params.postId])
 
+    const handleTitle = ({title}) => {
+        const words = title.split(' ')
+        const lastWord = words.pop()
+        const firstPart = words.join(' ')
+        return { firstPart, lastWord }
+    }
+
 
   return (
     <div className="page bg-white">
+        {
+            console.log(experience.title)
+        }
         <div className='flex flex-col justify-center items-center w-full relative'>
             <HeaderItem v={"v4"} nav={'/experiences'} />
             <div className='flex flex-col justify-center items-center pt-4 w-full'>
@@ -40,7 +50,7 @@ const ExperiencePage = ({params}) => {
                         <img className="w-full object-cover" src={`https://kaana.garooinc.com/kaana/api/files/${experience.collectionId}/${experience.id}/${experience.image}?token=`} alt={experience.name} />
                     </div>
                     <div className='p-10 bg-cream md:min-h-full md:w-1/2 flex flex-col justify-center'>
-                        <h1 className="text-2xl md:text-4xl text-start text-light-brown font-futura font-bold">{experience.title}</h1>
+                        <h1 className="text-2xl md:text-4xl text-start text-light-brown font-tiempos italic">{experience.title}</h1>
                         <div className="text-black md:px-0 gap-4 flex flex-col experiences" dangerouslySetInnerHTML={{ __html: experience.description }}></div>
                     </div>
                 </div>
