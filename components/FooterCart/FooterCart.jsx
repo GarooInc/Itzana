@@ -15,9 +15,9 @@ const FooterCart = () => {
 
   return (
     <div className='fixed bottom-0 w-full'>
-        <div className="absolute bottom-20 right-10 flex justify-evenly pt-10" >
-            <img src="/assets/images/room_service/home.png" alt="logo" className="w-[50px]" onClick={() => router.push('/')} />
-            <img src="/assets/images/room_service/cart.png" alt="logo" className="w-[50px]" onClick={handleShowCart} />
+        <div className="absolute bottom-20 right-10 flex justify-evenly pt-4" >
+            <img src="/assets/images/room_service/home.png" alt="logo" className="md:w-[50px] w-[40px]" onClick={() => router.push('/')} />
+            <img src="/assets/images/room_service/cart.png" alt="logo" className="md:w-[50px] w-[40px]" onClick={handleShowCart} />
         </div>
         <FooterItem />
         {showCart && <div className="absolute bottom-0 right-0">
