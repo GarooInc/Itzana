@@ -63,6 +63,10 @@
   @apply text-green border-2 border-green rounded-full px-6 py-2 mt-2 text-sm font-futura;
 }
 
+.input_cart{
+  @apply bg-green font-futura text-cream p-2;
+}
+
 .background {
   background-image: url('/assets/images/patron.png');
   background-size: cover;
