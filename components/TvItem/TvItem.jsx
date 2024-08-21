@@ -1,6 +1,7 @@
 "use client";
 import React, {useState, useEffect} from 'react'
 import PocketBase from 'pocketbase'
+import FooterItem from '../FooterItem/FooterItem'
 
 
 
@@ -28,16 +29,23 @@ const TvItem = () => {
 
 
   return (
-    <div className="bg-white shadow rounded-lg gap-2 flex relative flex-col md:w-1/2 w-3/4 p-4">
-        { 
-            channels.map((item, index) => (
-                <div key={index} className="flex gap-4">
-                    <span className="text-black text-md leading-tight font-futura mt-2">{item.channel}</span>
-                    <span className="text-black text-md leading-tight font-futura mt-2">{item.name}</span>
-                </div>
-            ))
-        }
+    <div className="bg-green shadow flex flex-col w-full p-4 items-center justify-center h-full relative">
+    <div className="flex flex-col items-center w-full">
+        {channels.map((item, index) => (
+        <div key={index} className="flex items-center justify-center w-full">
+            <div className="flex-1 flex justify-end">
+                <span className="text-cream text-md leading-tight font-futura mt-2 text-lg pr-2">{item.channel}</span>
+            </div>
+            <div className="w-px h-10 bg-cream"></div>
+            <div className="flex-1 pl-2">
+                <span className="text-cream text-md leading-tight font-futura mt-2 text-lg">{item.name}</span>
+            </div>
+        </div>
+        ))}
     </div>
+  <FooterItem transparent />
+</div>
+
   )
 }
 

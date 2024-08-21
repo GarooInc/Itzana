@@ -59,32 +59,33 @@ const Menu = () => {
 
     return (
         <div className="grid grid-cols-1 gap-4 md:grid-cols-4 grid-flow-row-dense auto-rows-fr md:py-20 pb-40 pt-10 px-10">
-        {food.map((item, index) => (
-            <div key={index} className={`bg-white gap-2 flex flex-col justify-between relative h-full`}>
+            {food.map((item, index) => (
+                <div key={index} className="bg-white flex flex-col justify-between h-full p-2">
                 <img className="w-full h-40 object-cover" src={`https://kaana.garooinc.com/kaana/api/files/${item.collectionId}/${item.id}/${item.Image}?token=`} alt={item.name} />
                 <h3 className="text-black text-base leading-tight font-futura mt-2">{item.Title}</h3>
                 <p className="text-black text-xs font-[futura light] leading-none">{item.Description}</p>
-                {item.Variants && (
-                    <div className='flex flex-col'>
-                        <label className="text-sm font-futura text-black mt-2">Variants</label>
+                <div className="flex-1 flex flex-col justify-between">
+                    {item.Variants ? (
+                    <div className='flex flex-col mt-2'>
+                        <label className="text-sm font-futura text-black">Variants</label>
                         <select className="bg-white font-futura text-xs" onChange={(e) => selectVariant(e, item.id)}>
-                            {Object.entries(item.Variants).map(([key, value]) => (
-                                <option key={key} value={value}>
-                                    {`${key} - £${value}`}
-                                </option>
-                            ))}
+                        {Object.entries(item.Variants).map(([key, value]) => (
+                            <option key={key} value={value}>{`${key} - £${value}`}</option>
+                        ))}
                         </select>
                     </div>
-                )}
-                <div className='bg-black w-full h-[1px] mt-2'></div>
-                <div className='flex gap-2 justify-between items-center'>
+                    ) : <div className="h-10"></div>}
+                    <div className='w-full h-[1px] bg-black mt-2'></div>
+                    <div className='flex gap-2 justify-between items-center'>
                     <p className="text-lightgray text-xs font-light leading-none font-futura">£{prices[item.id] || item.Price}</p>
                     <button className="green_button" onClick={() => addToCart(item)}>Add to cart</button>
+                    </div>
                 </div>
-            </div>
-        ))}
-        {notification && <CartNotification productName={actualProduct.Title} productImage={`https://kaana.garooinc.com/kaana/api/files/${actualProduct.collectionId}/${actualProduct.id}/${actualProduct.Image}?token=`} productVariant={actualProduct.Variant} />}
-    </div>
+                </div>
+            ))}
+  {notification && <CartNotification productName={actualProduct.Title} productImage={`https://kaana.garooinc.com/kaana/api/files/${actualProduct.collectionId}/${actualProduct.id}/${actualProduct.Image}?token=`} productVariant={actualProduct.Variant} />}
+</div>
+
     );
 };
 
