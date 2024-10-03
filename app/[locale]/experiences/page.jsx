@@ -3,7 +3,6 @@ import initTranslations from '@/app/i18n'
 import TranslationsProvider from '@/components/TranslationsProvider'
 import LanguageSwitcher from '@/components/LanguageSwitcher/LanguageSwitcher'
 import ExperiencesItem from '@/components/ExperiencesItem/ExperiencesItem'
-import ArrowBack from '@/components/ArrowBack/ArrowBack'
 import HeaderItem from '@/components/HeaderItem/HeaderItem'
 
 

@@ -35,7 +35,7 @@
 }
 
 .italictiempos_title{
-  @apply text-center text-4xl text-light-brown font-tiempos italic;
+  @apply text-center text-4xl text-light-brown font-tiempos italic py-4;
 }
 
 .tiempos_description{

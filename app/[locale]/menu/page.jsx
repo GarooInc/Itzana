@@ -17,31 +17,38 @@ export default async function Menu({ params: { locale }}) {
         },
         {
             title: t('home:nav2'),
+            link: '/frontdesk'
+        },
+        {
+            title: t('home:nav3'),
+            link: '/housekeeping'
+        },
+        {
+            title: t('home:nav4'),
             link: '/experiences'
         },
         {
-            title: "Food & Drinks",
+            title: t('home:nav5'),
             link: '/food_drinks'
         },
         {
-            title: "Activities",
+            title: t('home:nav6'),
             link: '/activities'
         },
         {
-            title: "Adventures",
+            title: t('home:nav7'),
             link: '/adventures'
         },
         {
-            title: "Room Service",
-            link: '/roomservice'
-        },
-
-        {
-            title: "TV Guide",
+            title: t('home:nav9'),
             link: '/tv'
         },
         {
-            title: "FAQs",
+            title: t('home:nav10'),
+            link: '/emergency'
+        },
+        {
+            title: t('home:nav11'),
             link: '/faqs'
         }
     ]
@@ -51,7 +58,7 @@ export default async function Menu({ params: { locale }}) {
         <main className="page bg-green pt-10 pb-20 md:py-10 background">
             <div className='flex flex-col justify-center items-center'>
                 <img src="/assets/images/logo_v6.png" alt="logo" className="w-[150px]" />
-                <div className="flex flex-col justify-center items-center gap-4 pt-10">
+                <div className="flex flex-col justify-center items-center gap-4 py-10">
                     {
                         nav.map((item, index) => (
                             <ButtonNav key={index} title={item.title} link={item.link} />

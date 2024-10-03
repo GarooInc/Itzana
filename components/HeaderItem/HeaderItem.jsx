@@ -5,7 +5,7 @@ const HeaderItem = ({v, namePage, nav, principal}) => {
   return (
     <div className={`w-full flex justify-center items-center  relative bg-white py-2 ${namePage ? 'py-4' : ''}`}>
         {
-          !principal && <ArrowBack absolute nav={nav} />
+          !principal && <ArrowBack absolute nav={nav ? nav : '/menu'} />
         }
         <div className='flex flex-col justify-center items-center'>
           <img src={`/assets/images/logo_${v}.png`} alt="logo" className="w-[150px]" />
