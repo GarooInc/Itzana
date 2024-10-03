@@ -2,69 +2,28 @@ import React from 'react'
 import initTranslations from '@/app/i18n'
 import TranslationsProvider from '@/components/TranslationsProvider'
 import LanguageSwitcher from '@/components/LanguageSwitcher/LanguageSwitcher'
+import HeaderItem from '@/components/HeaderItem/HeaderItem'
+import TextItem from '@/components/TextItem/TextItem'
 import ButtonNav from '@/components/ButtonNav/ButtonNav'
-import ChatBubble from '@/components/ChatBubble/ChatBubble'
-import { HiInformationCircle } from "react-icons/hi2"
 
-const namespaces = ['home', 'header']
+const namespaces = ['letter', 'header']
 
 export default async function Home({ params: { locale }}) {
     const { t, resources } = await initTranslations(locale, namespaces)
-    const nav = [
-        {
-            title: t('home:nav1'),
-            link: '/welcome'
-        },
-        {
-            title: t('home:nav2'),
-            link: '/experiences'
-        },
-        {
-            title: "Food & Drinks",
-            link: '/food_drinks'
-        },
-        {
-            title: "Activities",
-            link: '/activities'
-        },
-        {
-            title: "Adventures",
-            link: '/adventures'
-        },
-        {
-            title: "Room Service",
-            link: '/roomservice'
-        },
-
-        {
-            title: "TV Guide",
-            link: '/tv'
-        },
-        {
-            title: "FAQs",
-            link: '/faqs'
-        }
-    ]
 
     return (
         <TranslationsProvider locale={locale} namespaces={namespaces} resources={resources}>
-        <main className="page bg-green pt-10 pb-20 md:py-10 background">
-            <div className='flex flex-col justify-center items-center'>
-                <img src="/assets/images/logo_v6.png" alt="logo" className="w-[150px]" />
-                <div className="flex flex-col justify-center items-center gap-4 pt-10">
-                    {
-                        nav.map((item, index) => (
-                            <ButtonNav key={index} title={item.title} link={item.link} />
-                        ))
-                    }
+        <main className="page bg-green">
+            <HeaderItem v={"v5"} principal />
+            <div className='flex flex-col pt-10 pb-20 md:py-20 md:px-40 px-10 gap-4'>
+                <h1 className="principal_title m-0 flex gap-2 justify-center items-center md:flex-row flex-col">{t('letter:letter_title')}</h1>
+                <TextItem text={t('letter:letter_text')} color="cream" />
+                <div className='w-full flex justify-center items-center'>
+                    <ButtonNav title={t('letter:button')} link="/menu" />
                 </div>
             </div>
-            <ChatBubble />
         </main>
         <LanguageSwitcher />
-        <a href='https://garooinc.com/' className="fixed top-10 left-10">
-            <HiInformationCircle className="info-icon text-4xl text-cream" />
-        </a>
         </TranslationsProvider>
     );
 }
