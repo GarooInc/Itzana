@@ -15,7 +15,7 @@ const InfoDisplay = ({ collection }) => {
         const fetchData = async () => {
             try {
                 const records = await pb.collection(collection).getFullList({
-                    sort: id_number,
+                    sort: 'id_number',
                 });
                 setData(records);
             } catch (error) {

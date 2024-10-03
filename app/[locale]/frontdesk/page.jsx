@@ -20,7 +20,7 @@ export default async function FrontDesk({ params: { locale }}) {
                 <div className='flex md:flex-row flex-col items-center gap-4'>
                     <div className="flex items-center mt-6">
                         <FaWhatsapp className="mr-2 text-green text-2xl" />
-                        <span className="md:text-lg text-gray-700">WhatsApp: +501 610 1329</span>
+                        <a href="https://wa.link/ek6xjb" className="md:text-lg text-gray-700">WhatsApp: +501 610 1329</a>
                     </div>
                     <div className="flex items-center mt-4">
                         <FaPhone className="mr-2 text-green text-2xl" />
