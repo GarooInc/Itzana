@@ -77,3 +77,9 @@
 .infodisplay a{
   @apply underline;
 }
+
+
+/* emergency hk fd */
+.info_container{
+  @apply bg-green w-full p-10 md:pb-20 md:pt-10 flex flex-col justify-center items-center relative;
+}

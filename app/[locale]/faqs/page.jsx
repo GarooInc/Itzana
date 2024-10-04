@@ -50,7 +50,7 @@ return (
         <div className="page bg-white">
             <div className="flex flex-col w-full items-center">
                 <HeaderItem v={"v5"} />
-                <div className='bg-green w-full p-10 md:p-14 flex flex-col justify-center items-center relative'>
+                <div className='info_container'>
                     <h2 className='italictiempos_title'>FAQS</h2>
                     <div className='flex flex-col justify-center items-center gap-4 py-10 md:w-3/4'>
                     {
