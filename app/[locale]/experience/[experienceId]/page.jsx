@@ -56,7 +56,9 @@ const ExperiencePage = ({params}) => {
                 </div>
             </div>
         </div>
-        <FooterItem />
+        <div className='md:flex hidden'>
+            <FooterItem />
+        </div>
     </div>
 
   )
