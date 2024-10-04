@@ -38,13 +38,13 @@ const ExperiencePage = ({params}) => {
 
 
   return (
-    <div className="page bg-white">
+    <div className="page md:bg-white bg-cream">
         {
             console.log(experience.title)
         }
         <div className='flex flex-col justify-center items-center w-full relative'>
             <HeaderItem v={"v4"} nav={'/experiences'} />
-            <div className='flex flex-col justify-center items-center pt-4 w-full'>
+            <div className='flex flex-col justify-center items-center w-full'>
                 <div className='md:flex flex-col md:flex-row justify-center w-full items-stretch'>
                     <div className='md:w-1/2'>
                         <img className="w-full object-cover" src={`https://kaana.garooinc.com/kaana/api/files/${experience.collectionId}/${experience.id}/${experience.image}?token=`} alt={experience.name} />
@@ -56,7 +56,7 @@ const ExperiencePage = ({params}) => {
                 </div>
             </div>
         </div>
-        <div className='md:flex hidden'>
+        <div className='md:flex hidden justify-center items-center'>
             <FooterItem />
         </div>
     </div>
