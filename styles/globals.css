@@ -81,5 +81,5 @@
 
 /* emergency hk fd */
 .info_container{
-  @apply bg-green w-full p-10 md:pb-20 md:pt-10 flex flex-col justify-center items-center relative;
+  @apply bg-green w-full pt-10 pb-20 md:pb-20 md:pt-10 flex flex-col justify-center items-center relative;
 }

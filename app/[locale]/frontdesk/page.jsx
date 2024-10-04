@@ -18,30 +18,30 @@ export default async function FrontDesk({ params: { locale }}) {
             <HeaderItem v={"v5"} />
             <div className='info_container'>
                 <h2 className='italictiempos_title'>{t('home:nav2')}</h2>
-                    <div className="bg-cream p-6 rounded-lg font-serif flex flex-col gap-4 mx-10">
-                        <div className='flex md:flex-row flex-col items-center gap-4'>
-                            <div className="flex items-center mt-6">
+                    <div className="bg-cream md:p-10 p-8 rounded-lg font-serif flex flex-col md:gap-8 gap-4">
+                        <div className='flex md:flex-row flex-col md:items-center justify-start gap-4'>
+                            <div className="flex items-center">
                                 <FaWhatsapp className="mr-2 text-green text-2xl" />
                                 <a href="https://wa.link/ek6xjb" className="md:text-lg text-gray-700">WhatsApp: +501 610 1329</a>
                             </div>
-                            <div className="flex items-center mt-4">
+                            <div className="flex items-center">
                                 <FaPhone className="mr-2 text-green text-2xl" />
                                 <span className="md:text-lg text-gray-700">Extension: Dial Ext #1000</span>
                             </div>
                         </div>
 
-                        <div className="flex md:flex-row flex-col items-center mt-4 gap-4">
-                            <div className="flex items-center mt-4">
+                        <div className="flex md:flex-row flex-col items-start gap-4">
+                            <div className="flex items-center">
                                 <FaWifi className="mr-2 text-green text-2xl" />
                                 <span className="md:text-lg text-gray-700">Wi-Fi Network: ItzanaGuest</span>
                             </div>
-                            <div className="flex items-center mt-4">
+                            <div className="flex items-center">
                                 <FaWifi className="mr-2 text-green text-2xl" />
                                 <span className="md:text-lg text-gray-700">Wi-Fi Password: Itzana123</span>
                             </div>
                         </div>
 
-                        <div className="flex items-center mt-4">
+                        <div className="flex items-center gap-4">
                             <FaClock className="mr-2 text-green text-2xl" />
                             <span className="md:text-lg text-gray-700">Hours: From 6:00 am to 10:00 pm</span>
                         </div>
