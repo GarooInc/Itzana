@@ -8,12 +8,13 @@ import { TbClockHour3Filled } from "react-icons/tb";
 
 const FoodDrinksItem = () => {
     const [foodDrinks, setFoodDrinks] = useState([]);
+    const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL
 
-    const pb = new PocketBase('https://kaana.garooinc.com/kaana');
+    const pb = new PocketBase(`${backendUrl}`);    
     pb.autoCancellation(false);
 
     const openPdf = (item) => {
-        window.open(`https://kaana.garooinc.com/kaana/api/files/${item.collectionId}/${item.id}/${item.menu_pdf}?token=`, '_blank');
+        window.open(`${backendUrl}/api/files/${item.collectionId}/${item.id}/${item.menu_pdf}?token=`, '_blank');
     };
 
 
@@ -37,7 +38,7 @@ const FoodDrinksItem = () => {
         <div className="flex flex-col gap-10 w-full pb-10">
             {foodDrinks.map((item, index) => (
                 <div key={index} className='flex flex-col w-full'>
-                    <img className="w-full h-96 object-cover relative" src={`https://kaana.garooinc.com/kaana/api/files/${item.collectionId}/${item.id}/${item.cover_img}?token=`} alt={item.name} />
+                    <img className="w-full h-96 object-cover relative" src={`${backendUrl}/api/files/${item.collectionId}/${item.id}/${item.cover_img}?token=`} alt={item.name} />
                     <div className='flex flex-col p-10  bg-cream gap-4'>
                         <h3 className="md:text-4xl text-2xl leading-tight font-futura mt-2 text-light-brown">{item.name}</h3>
                         <div className='flex flex-col gap-4 border-b border-light-brown py-2'>

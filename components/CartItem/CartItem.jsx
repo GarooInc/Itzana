@@ -10,6 +10,8 @@ const CartItem = ({showCart}) => {
     const { state } = useCart()
     const { dispatch } = useCart()
     const router = useRouter()
+    const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL
+
 
     const [showForm, setShowForm] = useState(false)
     const [form, setForm] = useState({
@@ -88,7 +90,7 @@ const CartItem = ({showCart}) => {
                     {state.items.map((item, index) => (
                         <li key={index} className='px-2 pb-12  gap-2 flex relative'>
                             <button className=" justify-start items-center text-xs inline-flex font-futura bg-transparent text-black px-2 py-1 absolute right-2 border border-black" onClick={() => dispatch({ type: 'REMOVE_ITEM', payload: item })}>X</button>
-                            <img className="md:w-40 w-32 md:h-32 h-40 object-cover" src={`https://kaana.garooinc.com/kaana/api/files/${item.collectionId}/${item.id}/${item.Image}?token=`} alt={item.name} />
+                            <img className="md:w-40 w-32 md:h-32 h-40 object-cover" src={`${backendUrl}/api/files/${item.collectionId}/${item.id}/${item.Image}?token=`} alt={item.name} />
                             <div className='flex flex-col justify-between'>
                                 <h3 className="text-black text-base leading-tight font-futura mt-2  w-full gap-4 flex flex-col">{item.Title} <span className='text-aqua'>£{item.Price}</span></h3>
                                 {
