@@ -24,6 +24,10 @@ export default async function Menu({ params: { locale }}) {
             link: '/vip'
         },
         {
+            title: t('home:nav13'),
+            link: '/marina'
+        },
+        {
             title: t('home:nav2'),
             link: '/frontdesk'
         },
