@@ -5,11 +5,11 @@ import { useCart } from '@/contexts/CartContext';
 import CartNotification from '@/components/CartNotification/CartNotification';
 import { useTranslation } from 'react-i18next';
 
-const AdventuresItem = () => {
+const AdventuresVip = () => {
     const [adventures, setAdventures] = useState([]);
     const [notification, setNotification] = useState(false);
     const [actualProduct, setActualProduct] = useState({});
-    const [filter, setFilter] = useState(null); // Estado para el filtro
+    const [filter, setFilter] = useState(null);
     const { t, i18n } = useTranslation();
     const currentLocale = i18n.language;
     const { dispatch } = useCart();
@@ -21,10 +21,10 @@ const AdventuresItem = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const records = await pb.collection('Adventures').getFullList({
+                const records = await pb.collection('Adventures_VIP').getFullList({
                     sort: '-created',
                 });
-                const filteredRecords = filter !== null ? records.filter(item => item.other === filter) : records;
+                const filteredRecords = filter !== null ? records.filter(item => item.tag === filter) : records;
                 setAdventures(filteredRecords);
             } catch (error) {
                 console.error("Error fetching data: ", error);
@@ -32,7 +32,7 @@ const AdventuresItem = () => {
         };
 
         fetchData();
-    }, [filter]); // Dependencia en el filtro
+    }, [filter]);
 
     const addToCart = (item) => {
         const updatedItem = {
@@ -51,8 +51,8 @@ const AdventuresItem = () => {
     return (
         <div className='flex flex-col gap-10'>
             <div className='flex gap-4 justify-center items-center md:flex-row flex-col'>
-                <button className={`button_line w-[200px] ${filter === false ? 'bg-cream' : ''}`} onClick={() => setFilter(false)}>{t('button1')}</button>
-                <button className={`button_line w-[200px] ${filter === true ? 'bg-cream' : ''}`} onClick={() => setFilter(true)}>{t('button2')}</button>
+                <button className={`button_line  ${filter === "Passionate" ? 'bg-cream' : ''}`} onClick={() => setFilter("Passionate")}>{t('button1')}</button>
+                <button className={`button_line  ${filter === "In-House" ? 'bg-cream' : ''}`} onClick={() => setFilter("In-House")}>{t('button2')}</button>
             </div>
             <div className="adventure_container">
                 {adventures.map((item, index) => (
@@ -70,4 +70,4 @@ const AdventuresItem = () => {
     );
 };
 
-export default AdventuresItem;
+export default AdventuresVip;

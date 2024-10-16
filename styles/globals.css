@@ -109,3 +109,8 @@
 .adventure_title{
   @apply text-light-brown text-xl leading-tight font-tiempos mt-2;
 }
+
+.button_line{
+    @apply text-green border-b-2 border-green px-6 py-2 mt-2 text-sm font-futura;
+}
+
