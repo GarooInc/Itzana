@@ -96,3 +96,16 @@
 .welcome_description{
   @apply text-cream md:text-lg text-sm font-tiempos text-center leading-6 tracking-wide my-4;
 }
+
+/* adventure */
+.adventure_container{
+  @apply grid grid-cols-1 gap-4 xl:grid-cols-4 grid-flow-row-dense auto-rows-auto md:px-10 pb-20;
+}
+
+.adventure_img{
+  @apply md:w-full w-full h-48 md:h-52 object-cover;
+}
+
+.adventure_title{
+  @apply text-light-brown text-xl leading-tight font-tiempos mt-2;
+}

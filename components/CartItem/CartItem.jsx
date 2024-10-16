@@ -80,7 +80,7 @@ const CartItem = ({showCart}) => {
 
 
     return (
-        <div className="bg-cream w-80 md:w-[400px] md:p-10 py-10 px-4 h-screen">
+        <div className="bg-cream w-80 md:w-[450px] md:p-10 py-10 px-4 h-screen">
             <div className="flex justify-between items-center">
                 <img src="/assets/images/room_service/cart.png" alt="logo" className="w-[50px]" />
                 <button onClick={() => showCart(false)}><TfiClose className="text-black text-2xl" /></button>
@@ -90,9 +90,9 @@ const CartItem = ({showCart}) => {
                     {state.items.map((item, index) => (
                         <li key={index} className='px-2 pb-12  gap-2 flex relative'>
                             <button className=" justify-start items-center text-xs inline-flex font-futura bg-transparent text-black px-2 py-1 absolute right-2 border border-black" onClick={() => dispatch({ type: 'REMOVE_ITEM', payload: item })}>X</button>
-                            <img className="md:w-40 w-32 md:h-32 h-40 object-cover" src={`${backendUrl}/api/files/${item.collectionId}/${item.id}/${item.Image}?token=`} alt={item.name} />
+                            <img className="md:w-40 w-32 object-cover" src={`${backendUrl}/api/files/${item.collectionId}/${item.id}/${item.image}?token=`} alt={item.name} />
                             <div className='flex flex-col justify-between'>
-                                <h3 className="text-black text-base leading-tight font-futura mt-2  w-full gap-4 flex flex-col">{item.Title} <span className='text-aqua'>£{item.Price}</span></h3>
+                                <h3 className="text-black md:text-base text-xs leading-tight font-futura mt-8 w-full gap-4 flex flex-col">{item.title || item.Title} <span className='text-aqua'>£{item.Price}</span></h3>
                                 {
                                     item.variant && (
                                         <p className='text-gray text-xs font-futura leading-none'>Variant: {item.Variant}</p>

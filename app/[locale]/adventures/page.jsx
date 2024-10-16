@@ -1,10 +1,9 @@
 import React from 'react'
 import initTranslations from '@/app/i18n'
 import TranslationsProvider from '@/components/TranslationsProvider'
-import LanguageSwitcher from '@/components/LanguageSwitcher/LanguageSwitcher'
 import AdventuresItem from '@/components/AdventuresItem/AdventuresItem'
 import ArrowBack from '@/components/ArrowBack/ArrowBack'
-import FooterItem from '@/components/FooterItem/FooterItem'
+import FooterCart from '@/components/FooterCart/FooterCart'
 
 
 const namespaces = ['adventures', 'header']
@@ -21,9 +20,8 @@ return (
                 <h1 className="italictiempos_title">Adventures</h1>
             </div>
             <AdventuresItem />
-            <FooterItem />
+            <FooterCart />
         </div>
-        <LanguageSwitcher />
     </TranslationsProvider>
   )
 }
