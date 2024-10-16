@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import PocketBase from 'pocketbase';
 import { useTranslation } from 'react-i18next';
 
-const InfoDisplay = ({ collection }) => {
+const ServicesItem = () => {
     const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
     const [data, setData] = useState([]);
     const pb = new PocketBase(`${backendUrl}`);
@@ -15,7 +15,7 @@ const InfoDisplay = ({ collection }) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const records = await pb.collection(collection).getFullList({
+                const records = await pb.collection("resort_services").getFullList({
                     sort: 'id_number',
                 });
                 setData(records);
@@ -25,26 +25,18 @@ const InfoDisplay = ({ collection }) => {
         };
         fetchData();
     }, []);
-
     return (
         <div className="flex flex-col justify-center items-center gap-4 py-10 md:w-3/4 px-10">
             {
-                data.map((item, index) => (
-                    <div className="collapse collapse-arrow border-b border-cream w-full rounded-none" key={index}>
-                        <input type="checkbox" className="peer" />
-                        <div className="collapse-title text-xl font-medium text-white font-tiempos peer-checked:collapse-open">
-                            {item[`title_${currentLocale}`]}
-                        </div>
-                        <div className="collapse-content peer-checked:collapse-open">
-                            <p className='text-white font-futura infodisplay'
-                                dangerouslySetInnerHTML={{ __html: item[`desc_${currentLocale}`] }}>
-                            </p>
-                        </div>
+                data.map((item, index) => ( 
+                    <div className='flex gap-4 justify-center items-center' key={index}>
+                        <img className="w-20 h-20 rounded-full object-cover" src={`${backendUrl}/api/files/${item.collectionId}/${item.id}/${item.icon}?token=`} alt={item.name} />
+                        <span className='text-white font-futura infodisplay' dangerouslySetInnerHTML={{ __html: item[`title_${currentLocale}`] }}></span>
                     </div>
                 ))
             }
         </div>
-    );
-};
+  )
+}
 
-export default InfoDisplay;
+export default ServicesItem
