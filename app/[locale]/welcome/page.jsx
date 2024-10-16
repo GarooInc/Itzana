@@ -5,8 +5,7 @@ import LanguageSwitcher from '@/components/LanguageSwitcher/LanguageSwitcher'
 import Carousel from '@/components/Carousel/Carousel'
 import ChatBubble from '@/components/ChatBubble/ChatBubble'
 import HeaderItem from '@/components/HeaderItem/HeaderItem'
-
-
+import { useFormattedText } from '@/hooks/useFormattedText'
 
 const namespaces = ['welcome', 'header']
 
@@ -26,15 +25,17 @@ return (
             <div className="w-full md:h-3/5">
                 <Carousel images={images} />
             </div>
-            <div className='flex flex-col justify-center items-center w-full h-full bg-green p-10 md:p-14'>
-                <h1 className="principal_title m-0 flex gap-2 justify-center items-center md:flex-row flex-col">Welcome to <h1 className='italictiempos_title m-0'>ITZ&#39;ANA RESORT &amp; RESIDENCES</h1></h1>
-                <p className="text-center md:text-xl text-md  text-light-brown font-futura">A Luxury Oasis on the Caribbean Sea</p>
-                <span className="text-cream text-md font-futuralight text-center leading-6 tracking-wide my-4 font-tiempos">
-                    Escape the ordinary to a breathtaking destination on the Belize coast, where the emerald colors
-                    of the Caribbean Sea and the rhythm of the Mayan jungle create an oasis of relaxation and
-                    adventure. Relax on the white sand beach. Enjoy local cuisine fresh from the garden. Renew
-                    your senses with a spa treatment overlooking the ocean. Discover the tranquillity and cultural
-                    spirit of our Placencia resort, where the reef meets the rainforest. Life imitates luxury at Itz&#39;ana.
+            <div className='welcome_container'>
+                <div className="principal_title m-0 flex justify-center items-center gap-2 md:flex-row flex-col">
+                    <h1>{t('welcome:title')}</h1>
+                    <h1 className='italictiempos_title m-0'>ITZ&#39;ANA RESORT &amp; RESIDENCES</h1>
+                </div>
+                <p className="welcome_paragraph">{t('welcome:subtitle')}</p>
+                <span className="welcome_description">
+                    {t('welcome:description1')}
+                </span>
+                <span className="welcome_description">
+                    {t('welcome:description2')}
                 </span>
             </div>
         </div>

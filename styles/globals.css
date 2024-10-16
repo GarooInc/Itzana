@@ -83,3 +83,16 @@
 .info_container{
   @apply bg-green w-full pt-10 pb-20 md:pb-20 md:pt-10 flex flex-col justify-center items-center relative;
 }
+
+/* welcome */
+.welcome_container{
+  @apply flex flex-col justify-center items-center w-full h-full bg-green p-10 md:p-14;
+}
+
+.welcome_paragraph{
+  @apply text-center md:text-xl text-lg  text-light-brown font-futura;
+}
+
+.welcome_description{
+  @apply text-cream md:text-lg text-sm font-tiempos text-center leading-6 tracking-wide my-4;
+}
