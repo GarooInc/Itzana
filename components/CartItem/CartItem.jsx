@@ -11,6 +11,7 @@ const CartItem = ({showCart}) => {
     const { dispatch } = useCart()
     const router = useRouter()
     const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL
+    const ordersUrl = process.env.NEXT_PUBLIC_API_URL
 
 
     const [showForm, setShowForm] = useState(false)
@@ -30,18 +31,17 @@ const CartItem = ({showCart}) => {
 
     const onHandleSubmit = async (event) => {
         console.log(form)
-        console.log(state.items)
-
         const items = state.items.map(item => ({
-            "itemName" : item.Title,
+            "itemName" : item.Title || item.title,
             "variant" : item.Variant,
             "price" : parseFloat(item.Price),
             "quantity" : item.quantity
 
         }))
+        console.log("Items", items)
 
         event.preventDefault()
-        const response = await fetch('https://garoo-hotel-orders.koyeb.app/kaana/api/v1/orders',{
+        const response = await fetch(`${ordersUrl}/api/v1/orders`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -68,7 +68,7 @@ const CartItem = ({showCart}) => {
 
         const onHandleClose = () => {
             setShowForm(false)
-            router.push('/roomservice')
+            router.push('/menu')
         }
 
         const handleCheckout = () => {
