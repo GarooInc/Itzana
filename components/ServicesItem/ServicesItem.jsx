@@ -26,12 +26,14 @@ const ServicesItem = () => {
         fetchData();
     }, []);
     return (
-        <div className="flex flex-col justify-center items-center gap-4 py-10 md:w-3/4 px-10">
+        <div className="grid md:grid-cols-4 md:gap-10 grid-cols-1 gap-4 md:w-3/4 w-full px-10 py-10">
             {
                 data.map((item, index) => ( 
-                    <div className='flex gap-4 justify-center items-center' key={index}>
-                        <img className="w-20 h-20 rounded-full object-cover" src={`${backendUrl}/api/files/${item.collectionId}/${item.id}/${item.icon}?token=`} alt={item.name} />
-                        <span className='text-white font-futura infodisplay' dangerouslySetInnerHTML={{ __html: item[`title_${currentLocale}`] }}></span>
+                    <div className='flex' key={index}>
+                        <a href={item.link_service? item.link_service:""} className='flex gap-4 justify-start items-center'>
+                            <img className="md:w-20 md:h-20 w-10 rounded-full object-cover" src={`${backendUrl}/api/files/${item.collectionId}/${item.id}/${item.icon}?token=`} alt={item.name} />
+                            <span className='text-white font-futura infodisplay' dangerouslySetInnerHTML={{ __html: item[`title_${currentLocale}`] }}></span>
+                        </a>
                     </div>
                 ))
             }

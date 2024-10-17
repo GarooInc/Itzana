@@ -13,7 +13,7 @@ export default async function ResortServices({ params: { locale }}) {
 
 return (
     <TranslationsProvider locale={locale} namespaces={namespaces} resources={resources}>
-        <div className="page bg-green relative">
+        <div className="page bg-green relative pb-10">
             <div className="flex flex-col w-full items-center">
                 <HeaderItem v={"v2"} />
                 <h2 className='italictiempos_title'>{t('resort-services:title')}</h2>
