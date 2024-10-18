@@ -31,7 +31,7 @@ const ServicesItem = () => {
                 data.map((item, index) => ( 
                     <div className='flex' key={index}>
                         <a href={item.link_service? item.link_service:""} className='flex gap-4 justify-start items-center'>
-                            <img className="md:w-20 md:h-20 w-10 rounded-full object-cover" src={`${backendUrl}/api/files/${item.collectionId}/${item.id}/${item.icon}?token=`} alt={item.name} />
+                            <img className="md:w-20 md:h-20 w-16 rounded-full object-cover" src={`${backendUrl}/api/files/${item.collectionId}/${item.id}/${item.icon}?token=`} alt={item.name} />
                             <span className='text-white font-futura infodisplay' dangerouslySetInnerHTML={{ __html: item[`title_${currentLocale}`] }}></span>
                         </a>
                     </div>
