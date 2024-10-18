@@ -23,7 +23,7 @@ return (
                     </span>
                 </div>
                 <InfoDisplay collection={"marina"} />
-                <div className='info_container'>
+                <div className='info_container px-10 flex flex-col justify-center items-center'>
                     <span className="welcome_description">
                     {t('marina:contact1')} <a href="https://wa.me/5016292736">+501 629 2736</a>
                     </span>
