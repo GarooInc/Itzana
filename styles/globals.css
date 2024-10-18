@@ -94,7 +94,7 @@
 }
 
 .welcome_description{
-  @apply text-cream md:text-lg text-sm font-tiempos text-center leading-6 tracking-wide my-4;
+  @apply text-cream text-lg font-tiempos text-center leading-6 tracking-wide my-4;
 }
 
 /* adventure */

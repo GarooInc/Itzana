@@ -15,11 +15,13 @@ return (
     <TranslationsProvider locale={locale} namespaces={namespaces} resources={resources}>
         <div className="page bg-green relative">
             <div className="flex flex-col w-full items-center">
-                <HeaderItem v={"v2"} />
-                <h2 className='italictiempos_title'>{t('marina:title')}</h2>
-                <span className="welcome_description px-10">
-                    {t('marina:description')}
-                </span>
+            <HeaderItem v={"v2"} />
+                <div className='px-10 flex flex-col justify-center items-center'>
+                    <h2 className='italictiempos_title'>{t('marina:title')}</h2>
+                    <span className="welcome_description">
+                        {t('marina:description')}
+                    </span>
+                </div>
                 <InfoDisplay collection={"marina"} />
                 <div className='info_container'>
                     <span className="welcome_description">
