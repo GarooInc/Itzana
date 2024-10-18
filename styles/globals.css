@@ -120,7 +120,7 @@
 }
 
 .cart_items{
-  @apply py-10 flex flex-col overscroll-y-auto;
+  @apply py-10 flex flex-col overflow-y-scroll h-[90%];
 }
 
 .remove_button{

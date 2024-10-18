@@ -4,6 +4,7 @@ import { useCart } from '@/contexts/CartContext'
 import { useRouter } from "next/navigation"
 import { CgArrowLongRight } from 'react-icons/cg'
 import { TfiClose } from "react-icons/tfi"
+import { motion } from "framer-motion"
 
 
 const CartItem = ({showCart}) => {
@@ -15,6 +16,9 @@ const CartItem = ({showCart}) => {
 
 
     const [showForm, setShowForm] = useState(false)
+    const [isOpen, setIsOpen] = useState(true)
+
+
     const [form, setForm] = useState({
         phone : '',
         family : '',
@@ -71,19 +75,25 @@ const CartItem = ({showCart}) => {
             router.push('/menu')
         }
 
+        const onHandleCloseCart = () => {
+            setIsOpen(!isOpen)
+            showCart(false)
+        }
+
         const handleCheckout = () => {
             setShowForm(true)
         }
 
-
-
-
+        const variants = {
+            open: { opacity: 1, x: 0 },
+            closed: { opacity: 0, x: "-100%", transition: { duration: 0.3 } }
+          }
 
     return (
-        <div className="cart_container">
+        <motion.div className="cart_container" animate={isOpen ? "open" : "closed"} variants={variants} initial="closed">
             <div className="flex justify-between items-center">
                 <img src="/assets/images/room_service/cart.png" alt="logo" className="w-[50px]" />
-                <button onClick={() => showCart(false)}><TfiClose className="text-black text-2xl" /></button>
+                <button onClick={onHandleCloseCart}><TfiClose className="text-black text-2xl" /></button>
             </div>
             {state.items.length > 0 ? (
                 <ul className='cart_items'>
@@ -140,7 +150,7 @@ const CartItem = ({showCart}) => {
                     </div>
                 )
             }
-        </div>
+        </motion.div>
     );
 }
 

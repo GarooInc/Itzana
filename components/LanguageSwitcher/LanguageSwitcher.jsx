@@ -38,7 +38,7 @@ const LanguageSwitcher = () => {
 
 
     return (
-        <div className='fixed top-2 right-0 p-4 dropdown'>
+        <div className='absolute top-2 right-0 p-4 dropdown'>
           <div tabIndex={0} role="button" className="m-4 bg-transparent">
             <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g clipPath="url(#clip0_17_923)">
