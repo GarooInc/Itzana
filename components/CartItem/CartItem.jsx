@@ -67,7 +67,7 @@ const CartItem = ({ showCart }) => {
 
     const onHandleClose = () => {
         setShowForm(false)
-        router.push('/menu')
+        setMessage('')
     }
 
     const onHandleCloseCart = () => {
@@ -99,7 +99,7 @@ const CartItem = ({ showCart }) => {
         <>
         <motion.div className="cart_container" animate={isOpen ? "open" : "closed"} variants={variants} initial="closed">
             <div className="flex justify-between items-center">
-                <img src="/assets/images/room_service/cart.png" alt="logo" className="w-[50px]" />
+                <img src="/assets/images/room_service/cart.png" alt="logo" className="w-[50px] hidden" />
                 <button onClick={onHandleCloseCart}><TfiClose className="text-black text-2xl" /></button>
             </div>
             {state.items.length > 0 ? (

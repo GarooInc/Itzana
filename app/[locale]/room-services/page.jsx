@@ -4,11 +4,11 @@ import TranslationsProvider from '@/components/TranslationsProvider'
 import LanguageSwitcher from '@/components/LanguageSwitcher/LanguageSwitcher'
 import HeaderItem from '@/components/HeaderItem/HeaderItem'
 import ServicesItem from '@/components/ServicesItem/ServicesItem'
-import FooterItem from '@/components/FooterItem/FooterItem'
+import FooterCart from '@/components/FooterCart/FooterCart'
 
-const namespaces = ['resort-services', 'header']
+const namespaces = ['room-services', 'header']
 
-export default async function ResortServices({ params: { locale }}) {
+export default async function RoomServices({ params: { locale }}) {
     const { t, resources } = await initTranslations(locale, namespaces)
 
 return (
@@ -16,10 +16,14 @@ return (
         <div className="page bg-cream relative pb-10">
             <div className="flex flex-col w-full items-center">
                 <HeaderItem v={"v2"} />
-                <h2 className='italictiempos_title'>{t('resort-services:title')}</h2>
-                <ServicesItem collection={"resort_services"}/>
+                <h2 className='italictiempos_title'>{t('room-services:title')}</h2>
+                <span className='tiempos_description px-10'>
+                    {t('room-services:text1')}
+                </span>
+
+                <ServicesItem room={true} collection={"room_services"}/>
             </div>
-            <FooterItem />
+            <FooterCart />
         </div>
         <LanguageSwitcher />
     </TranslationsProvider>

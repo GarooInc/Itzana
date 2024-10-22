@@ -31,7 +31,7 @@ const FooterCart = () => {
             </div>
         </div>
         <FooterItem />
-        {showCart && <div className="absolute bottom-0 right-0">
+        {showCart && <div className="absolute bottom-0 right-0 z-10">
             <CartItem showCart= {handleShowCart} />
         </div>}
     </div>
