@@ -13,11 +13,11 @@ export default async function RoomServices({ params: { locale }}) {
 
 return (
     <TranslationsProvider locale={locale} namespaces={namespaces} resources={resources}>
-        <div className="page bg-cream relative pb-10">
+        <div className="page bg-white relative pb-10">
             <div className="flex flex-col w-full items-center">
                 <HeaderItem v={"v2"} />
                 <h2 className='italictiempos_title'>{t('room-services:title')}</h2>
-                <span className='tiempos_description px-10'>
+                <span className='tiempos_description px-10 text-center'>
                     {t('room-services:text1')}
                 </span>
 
