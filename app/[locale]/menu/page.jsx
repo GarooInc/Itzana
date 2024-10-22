@@ -44,6 +44,10 @@ export default async function Menu({ params: { locale }}) {
             link: '/resort-services'
         },
         {
+            title: t('home:nav16'),
+            link: '/spa'
+        },
+        {
             title: t('home:nav4'),
             link: '/experiences'
         },

@@ -5,8 +5,8 @@ import { useCart } from '@/contexts/CartContext';
 import CartNotification from '@/components/CartNotification/CartNotification';
 import { useTranslation } from 'react-i18next';
 
-const AdventuresVip = () => {
-    const [adventures, setAdventures] = useState([]);
+const TabCartItem = ({ collection }) => {
+    const [items, setItems] = useState([]);
     const [notification, setNotification] = useState(false);
     const [actualProduct, setActualProduct] = useState({});
     const [filter, setFilter] = useState(null);
@@ -15,24 +15,23 @@ const AdventuresVip = () => {
     const { dispatch } = useCart();
     const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL
 
-    const pb = new PocketBase(`${backendUrl}`);    
+    const pb = new PocketBase(`${backendUrl}`);
     pb.autoCancellation(false);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const records = await pb.collection('Adventures_VIP').getFullList({
+                const records = await pb.collection(collection).getFullList({
                     sort: '-created',
                 });
-                const filteredRecords = filter !== null ? records.filter(item => item.tag === filter) : records;
-                setAdventures(filteredRecords);
+                setItems(records);
             } catch (error) {
                 console.error("Error fetching data: ", error);
             }
         };
 
         fetchData();
-    }, [filter]);
+    }, []);
 
     const addToCart = (item) => {
         const updatedItem = {
@@ -48,17 +47,30 @@ const AdventuresVip = () => {
         }, 3000);
     };
 
+    const uniqueTags_es = [...new Set(items?.map(item => item.tag_es))].sort((a, b) => b.localeCompare(a));
+    const uniqueTags_en = [...new Set(items?.map(item => item.tag_en))].sort((a, b) => b.localeCompare(a));
+    const filteredItems = filter !== null ? items.filter(item => item.tag_es === filter || item.tag_en === filter) : items;
+
     return (
         <div className='flex flex-col gap-10'>
             <div className='flex gap-4 justify-center items-center md:flex-row flex-col'>
-                <button className={`button_line  ${filter === "Passionate" ? 'bg-cream' : ''}`} onClick={() => setFilter("Passionate")}>{t('button1')}</button>
-                <button className={`button_line  ${filter === "In-House" ? 'bg-cream' : ''}`} onClick={() => setFilter("In-House")}>{t('button2')}</button>
+                {
+                    currentLocale === 'es' ? uniqueTags_es.map((tag, index) => (
+                        <button key={index} className={`button_line w-[250px] h-16 ${filter === tag ? 'bg-cream text' : ''}`} onClick={() => setFilter(tag)}>
+                            {tag}
+                        </button>
+                    )) : uniqueTags_en.map((tag, index) => (
+                        <button key={index} className={`button_line w-[250px] h-16 ${filter === tag ? 'bg-cream' : ''}`} onClick={() => setFilter(tag)}>
+                            {tag}
+                        </button>
+                    ))
+                }
             </div>
             <div className="adventure_container">
-                {adventures.map((item, index) => (
+                {filteredItems.map((item, index) => (
                     <div key={index} className={`bg-white px-2 pb-16 gap-2 flex flex-col relative ${(index + 1) % 4 !== 0 ? 'xl:border-r xl:border-black' : ''} ${(index + 1) % 2 !== 0 ? 'xl:border-r xl:border-black' : ''}`}>
                         <img className="adventure_img" src={`${backendUrl}/api/files/${item.collectionId}/${item.id}/${item.image}?token=`} alt={item.name} />
-                        <h3 className="adventure_title">{item.title}</h3>
+                        <h3 className="adventure_title">{item[`title_${currentLocale}`]}</h3>
                         <p className="text-black text-md font-futuralight leading-6 tracking-tight" dangerouslySetInnerHTML={{ __html: item[`description_${currentLocale}`] }}></p>
                         <p className="text-light-brown text-xs  leading-none font-futura font-bold"> £{item.price}</p>
                         <button className='green_button w-[200px] absolute bottom-4' onClick={() => addToCart(item)}>Request a reservation</button>
@@ -70,4 +82,4 @@ const AdventuresVip = () => {
     );
 };
 
-export default AdventuresVip;
+export default TabCartItem;

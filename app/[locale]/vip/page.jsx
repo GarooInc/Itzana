@@ -1,10 +1,10 @@
 import React from 'react'
 import initTranslations from '@/app/i18n'
 import TranslationsProvider from '@/components/TranslationsProvider'
-import AdventuresVip from '@/components/AdventuresVip/AdventuresVip'
 import ArrowBack from '@/components/ArrowBack/ArrowBack'
 import FooterCart from '@/components/FooterCart/FooterCart'
 import LanguageSwitcher from '@/components/LanguageSwitcher/LanguageSwitcher'
+import TabCartItem from '@/components/TabCartItem/TabCartItem'
 
 
 const namespaces = ['vip', 'home']
@@ -24,7 +24,7 @@ return (
                 </span>
             </div>
             <LanguageSwitcher />
-            <AdventuresVip />
+            <TabCartItem collection={"Adventures_VIP"} />
             <FooterCart />
         </div>
     </TranslationsProvider>
