@@ -56,7 +56,7 @@ const TabCartItem = ({ collection }) => {
             <div className='flex gap-4 justify-center items-center md:flex-row flex-col'>
                 {
                     currentLocale === 'es' ? uniqueTags_es.map((tag, index) => (
-                        <button key={index} className={`button_line w-[250px] h-16 ${filter === tag ? 'bg-cream text' : ''}`} onClick={() => setFilter(tag)}>
+                        <button key={index} className={`button_line w-[250px] h-16 ${filter === tag ? 'bg-cream' : ''}`} onClick={() => setFilter(tag)}>
                             {tag}
                         </button>
                     )) : uniqueTags_en.map((tag, index) => (

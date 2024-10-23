@@ -36,16 +36,8 @@ export default async function Menu({ params: { locale }}) {
             link: '/housekeeping'
         },
         {
-            title: t('home:nav8'),
-            link: '/room-services'
-        },
-        {
             title: t('home:nav14'),
             link: '/resort-services'
-        },
-        {
-            title: t('home:nav16'),
-            link: '/spa'
         },
         {
             title: t('home:nav4'),
