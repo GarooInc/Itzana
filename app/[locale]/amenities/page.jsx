@@ -8,7 +8,7 @@ import HeaderItem from '@/components/HeaderItem/HeaderItem'
 
 const namespaces = ['experiences', 'header']
 
-export default async function Experiences({ params: { locale }}) {
+export default async function Amenities({ params: { locale }}) {
     const { t, resources } = await initTranslations(locale, namespaces)
 
 return (

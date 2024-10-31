@@ -16,18 +16,6 @@ export default async function Menu({ params: { locale }}) {
             link: '/welcome'
         },
         {
-            title: t('home:nav7'),
-            link: '/adventures'
-        },
-        {
-            title: t('home:nav12'),
-            link: '/vip'
-        },
-        {
-            title: t('home:nav13'),
-            link: '/marina'
-        },
-        {
             title: t('home:nav2'),
             link: '/frontdesk'
         },
@@ -36,20 +24,32 @@ export default async function Menu({ params: { locale }}) {
             link: '/housekeeping'
         },
         {
+            title: t('home:nav5'),
+            link: '/food_drinks'
+        },
+        {
             title: t('home:nav14'),
             link: '/resort-services'
         },
         {
             title: t('home:nav4'),
-            link: '/experiences'
+            link: '/amenities'
         },
         {
-            title: t('home:nav5'),
-            link: '/food_drinks'
+            title: t('home:nav7'),
+            link: '/adventures'
+        },
+        {
+            title: t('home:nav12'),
+            link: '/vip'
         },
         {
             title: t('home:nav6'),
             link: '/activities'
+        },
+        {
+            title: t('home:nav13'),
+            link: '/marina'
         },
         {
             title: t('home:nav10'),
