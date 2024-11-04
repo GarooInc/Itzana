@@ -55,7 +55,7 @@ const ServicesItem = ({ room, collection}) => {
                     <div key={index} className="px-2 pb-16 gap-2 flex flex-col relative" >
                         <img className="adventure_img" src={`${backendUrl}/api/files/${item.collectionId}/${item.id}/${item.image}?token=`} alt={item.name} />
                         <h3 className="adventure_title">{item[`title_${currentLocale}`]}</h3>
-                        <p className="text-light-brown text-xs  leading-none font-futura font-bold"> £{item.price}</p>
+                        <p className="text-light-brown text-xs  leading-none font-futura font-bold"> ${item.price}</p>
                         <button className='green_button w-[200px] absolute bottom-4' onClick={() => addToCart(item)}>Add to cart</button>
                     </div>
                 ))

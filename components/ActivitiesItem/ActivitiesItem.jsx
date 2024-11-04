@@ -3,6 +3,7 @@ import React, {useState, useEffect} from 'react'
 import PocketBase from 'pocketbase'
 import { FaLocationDot } from "react-icons/fa6"
 import { FaRegCalendar } from "react-icons/fa6"
+import { useTranslation } from 'react-i18next'
 
 
 const ActivitiesItem = () => {
@@ -11,6 +12,8 @@ const ActivitiesItem = () => {
 
     const pb = new PocketBase(`${backendUrl}`)
     pb.autoCancellation(false);
+    const { i18n } = useTranslation();
+    const currentLocale = i18n.language;
 
     useEffect(() => {
         const fetchData = async () => {
@@ -36,14 +39,14 @@ const ActivitiesItem = () => {
                 <div key={index} className={`bg-white px-2 pb-12 gap-2 flex flex-col relative cursor-pointer ${(index + 1) % 4 !== 0 ? 'md:border-r md:border-black' : ''} ${(index + 1) % 2 !== 0 ? 'md:border-r md:border-black' : ''}`}>
                     <img className="w-full md:h-60 h-60 object-cover" src={`${backendUrl}/api/files/${item.collectionId}/${item.id}/${item.Image}?token=`} alt={item.name} />
                     <div className='flex flex-col gap-4  w-full'>
-                        <h3 className="tiempos_description">{item.Title}</h3>
+                        <h3 className="tiempos_description">{item[`title_${currentLocale}`]}</h3>
                         <div className="flex items-center leading-none gap-2 w-full">
                             <FaLocationDot className="icon_activities text-md " />
-                            <p className='text-black text-md font-futura font-medium tracking-tight w-3/5'>{item.Location}</p>
+                            <p className='text-black text-md font-futura font-medium tracking-tight w-3/5'>{item[`location_${currentLocale}`]}</p>
                         </div>
                         <div className="flex items-center leading-none gap-2 w-full">
                             <FaRegCalendar className="icon_activities text-md" />
-                            <p className='text-black text-md font-futura font-medium tracking-tight w-3/5'>{item.Date}</p>
+                            <p className='text-black text-md font-futura font-medium tracking-tight w-3/5'>{item[`date_${currentLocale}`]}</p>
                         </div>
                     </div>
                 </div>

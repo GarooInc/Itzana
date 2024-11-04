@@ -6,7 +6,7 @@ import HeaderItem from '@/components/HeaderItem/HeaderItem'
 import FooterItem from '@/components/FooterItem/FooterItem'
 import InfoDisplay from '@/components/InfoDisplay/InfoDisplay'
 
-const namespaces = ['faqs', 'header']
+const namespaces = ['faqs']
 
 export default async function Faqs({ params: { locale }}) {
     const { t, resources } = await initTranslations(locale, namespaces)
@@ -16,7 +16,7 @@ return (
         <div className="page bg-green relative">
             <div className="flex flex-col w-full items-center">
                 <HeaderItem v={"v2"} />
-                <h2 className='italictiempos_title'>{t('header:faqs')}</h2>
+                <h2 className='italictiempos_title'>{t('faqs:title')}</h2>
                 <div className='info_container'>
                     <div className='flex flex-col justify-center items-center gap-4 py-10 md:w-3/4'>
                         <InfoDisplay collection={"faqs"} />

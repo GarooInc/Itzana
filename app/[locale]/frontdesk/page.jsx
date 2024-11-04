@@ -7,7 +7,7 @@ import InfoDisplay from '@/components/InfoDisplay/InfoDisplay'
 import { FaWhatsapp, FaPhone, FaClock, FaWifi } from "react-icons/fa"
 import FooterItem from '@/components/FooterItem/FooterItem'
 
-const namespaces = ['home', 'header']
+const namespaces = ['home', 'header','general']
 
 export default async function FrontDesk({ params: { locale }}) {
     const { t, resources } = await initTranslations(locale, namespaces)
@@ -22,28 +22,28 @@ export default async function FrontDesk({ params: { locale }}) {
                         <div className='flex md:flex-row flex-col md:items-center justify-start gap-4'>
                             <div className="flex items-center">
                                 <FaWhatsapp className="mr-2 text-green text-2xl" />
-                                <a href="https://wa.link/ek6xjb" className="md:text-lg text-gray-700">WhatsApp: +501 610 1329</a>
+                                <a href="https://wa.link/ek6xjb" className="md:text-lg text-gray-700">{t('general:front_desk_0')}</a>
                             </div>
                             <div className="flex items-center">
                                 <FaPhone className="mr-2 text-green text-2xl" />
-                                <span className="md:text-lg text-gray-700">Extension: Dial Ext #1000</span>
+                                <span className="md:text-lg text-gray-700">{t('general:front_desk_1')}</span>
                             </div>
                         </div>
 
                         <div className="flex md:flex-row flex-col items-start gap-4">
                             <div className="flex items-center">
                                 <FaWifi className="mr-2 text-green text-2xl" />
-                                <span className="md:text-lg text-gray-700">Wi-Fi Network: ItzanaGuest</span>
+                                <span className="md:text-lg text-gray-700">{t('general:front_desk_2')}</span>
                             </div>
                             <div className="flex items-center">
                                 <FaWifi className="mr-2 text-green text-2xl" />
-                                <span className="md:text-lg text-gray-700">Wi-Fi Password: Itzana123</span>
+                                <span className="md:text-lg text-gray-700">{t('general:front_desk_3')}</span>
                             </div>
                         </div>
 
                         <div className="flex items-center gap-4">
                             <FaClock className="mr-2 text-green text-2xl" />
-                            <span className="md:text-lg text-gray-700">Hours: From 6:00 am to 10:00 pm</span>
+                            <span className="md:text-lg text-gray-700">{t('general:front_desk_4')}</span>
                         </div>
                     </div>
                 <InfoDisplay collection="Front_Desk" />

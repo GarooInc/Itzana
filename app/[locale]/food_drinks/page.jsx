@@ -8,7 +8,7 @@ import HeaderItem from '@/components/HeaderItem/HeaderItem'
 
 
 
-const namespaces = ['food_drinks', 'header']
+const namespaces = ['food_drinks']
 
 export default async function FoodDrinks({ params: { locale }}) {
     const { t, resources } = await initTranslations(locale, namespaces)
@@ -17,7 +17,7 @@ return (
     <TranslationsProvider locale={locale} namespaces={namespaces} resources={resources}>
         <HeaderItem v={"v5"} />
         <div className="page bg-white">
-            <h1 className="italictiempos_title">Food & Drinks</h1>
+            <h1 className="italictiempos_title">{t('food_drinks:title')}</h1>
             <FoodDrinksItem />
         </div>
         <LanguageSwitcher />

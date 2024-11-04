@@ -3,12 +3,15 @@ import React, {useState, useEffect} from 'react'
 import PocketBase from 'pocketbase'
 import { useRouter } from "next/navigation"
 import { CgArrowLongRight } from "react-icons/cg"
+import { useTranslation } from 'react-i18next'
 
 
-const ExperiencesItem = () => {
+const AmenitiesItem = () => {
     const router = useRouter()
     const [experiences, setExperiences] = useState([]);
     const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL
+    const { i18n } = useTranslation();
+    const currentLocale = i18n.language;
 
     const pb = new PocketBase(`${backendUrl}`);
     pb.autoCancellation(false);
@@ -16,7 +19,7 @@ const ExperiencesItem = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const records = await pb.collection('Experiences').getFullList({
+                const records = await pb.collection('amenities').getFullList({
                     sort: '-created',
                 });
                 console.log(records)
@@ -37,7 +40,7 @@ const ExperiencesItem = () => {
                     onClick={() => router.push(`/experience/${item.id}`)}>
                     <img className="md:w-full md:h-42 w-40 h-48  object-cover" src={`${backendUrl}/api/files/${item.collectionId}/${item.id}/${item.image}?token=`} alt={item.name} />
                     <div className='flex justify-between items-center'>
-                        <h3 className="text-black text-base leading-tight font-tiempos mt-2">{item.title}</h3>
+                        <h3 className="text-black text-base leading-tight font-tiempos mt-2">{item[`title_${currentLocale}`]}</h3>
                         <CgArrowLongRight className="text-2xl text-black" />
                     </div>
                 </div>
@@ -48,4 +51,4 @@ const ExperiencesItem = () => {
   )
 }
 
-export default ExperiencesItem
+export default AmenitiesItem

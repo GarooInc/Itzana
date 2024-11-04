@@ -185,3 +185,40 @@
 .cart_bubble{
   @apply absolute top-0 right-0 bg-aqua text-white rounded-full w-4 h-4 flex items-center justify-center text-xs;
 }
+
+/*food and drinks*/
+.food_container{
+  @apply flex flex-col gap-10 w-full pb-10;
+}
+
+.food_inner{
+  @apply flex flex-col w-full;
+}
+
+.food_img{
+  @apply w-full h-96 object-cover relative;
+}
+
+.food_title{
+  @apply md:text-4xl text-2xl leading-tight font-futura mt-2 text-light-brown;
+}
+
+.food_description_container{
+  @apply flex flex-col gap-4 border-b border-light-brown py-2;
+}
+
+.food_description{
+  @apply text-black md:text-lg text-sm font-tiempos leading-6 text-justify;
+}
+
+.food_info{
+  @apply flex flex-col gap-2 justify-end items-start;
+}
+
+.food_info_text{
+  @apply text-black md:text-lg text-sm font-futura leading-none flex gap-2 font-medium justify-center items-center;
+}
+
+.food_icon{
+  @apply text-light-brown text-lg;
+}

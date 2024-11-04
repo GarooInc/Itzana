@@ -3,7 +3,7 @@ import PocketBase from 'pocketbase'
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next';
 
-const ExperienceInnerItem = ({experienceId}) => {
+const AmenitiesInnerItem = ({experienceId}) => {
     const [experience, setExperience] = useState('')
     const [loading, setLoading] = useState(true)
     const { i18n } = useTranslation();
@@ -18,7 +18,7 @@ const ExperienceInnerItem = ({experienceId}) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const record = await pb.collection('Experiences').getOne(current)
+                const record = await pb.collection('amenities').getOne(current)
                 setExperience(record);
                 setLoading(false)
             } catch (error) {
@@ -38,7 +38,7 @@ const ExperienceInnerItem = ({experienceId}) => {
                         <img className="w-full object-cover" src={`${backendUrl}/api/files/${experience.collectionId}/${experience.id}/${experience.image}?token=`} alt={experience.name} />
                     </div>
                     <div className='p-10 bg-cream md:min-h-full md:w-1/2 flex flex-col justify-center'>
-                        <h1 className="text-2xl md:text-4xl text-start text-brown font-futura font-bold">{experience.title}</h1>
+                        <h1 className="text-2xl md:text-4xl text-start text-brown font-futura font-bold">{experience[`title_${currentLocale}`]}</h1>
                         <div className="text-black md:px-0 gap-4 flex flex-col experiences" dangerouslySetInnerHTML={{ __html: experience[`description_${currentLocale}`] }}></div>
                     </div>
                 </div>
@@ -48,4 +48,4 @@ const ExperienceInnerItem = ({experienceId}) => {
   )
 }
 
-export default ExperienceInnerItem
+export default AmenitiesInnerItem

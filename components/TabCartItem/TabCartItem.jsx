@@ -73,7 +73,7 @@ const TabCartItem = ({ collection }) => {
                         <img className="adventure_img" src={`${backendUrl}/api/files/${item.collectionId}/${item.id}/${item.image}?token=`} alt={item.name} />
                         <h3 className="adventure_title">{item[`title_${currentLocale}`]}</h3>
                         <p className="text-black text-md font-futuralight leading-6 tracking-tight" dangerouslySetInnerHTML={{ __html: item[`description_${currentLocale}`] }}></p>
-                        <p className="text-light-brown text-xs  leading-none font-futura font-bold"> £{item.price}</p>
+                        <p className="text-light-brown text-xs  leading-none font-futura font-bold"> ${item.price}</p>
                         <button className='green_button w-[200px] absolute bottom-4' onClick={() => addToCart(item)}>Request a reservation</button>
                     </div>
                 ))}

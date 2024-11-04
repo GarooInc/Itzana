@@ -6,7 +6,7 @@ import ButtonNav from '@/components/ButtonNav/ButtonNav'
 import ChatBubble from '@/components/ChatBubble/ChatBubble'
 import { HiInformationCircle } from "react-icons/hi2"
 
-const namespaces = ['home', 'header']
+const namespaces = ['home', 'header','general']
 
 export default async function Menu({ params: { locale }}) {
     const { t, resources } = await initTranslations(locale, namespaces)
@@ -74,7 +74,7 @@ export default async function Menu({ params: { locale }}) {
                     }
                 </div>
             </div>
-            <ChatBubble />
+            <ChatBubble text={t('general:chat_bubble')} />
         </main>
         <LanguageSwitcher />
         <a href='https://garooinc.com/' className="fixed top-10 left-10">

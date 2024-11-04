@@ -5,9 +5,8 @@ import LanguageSwitcher from '@/components/LanguageSwitcher/LanguageSwitcher'
 import Carousel from '@/components/Carousel/Carousel'
 import ChatBubble from '@/components/ChatBubble/ChatBubble'
 import HeaderItem from '@/components/HeaderItem/HeaderItem'
-import { useFormattedText } from '@/hooks/useFormattedText'
 
-const namespaces = ['welcome', 'header']
+const namespaces = ['welcome', 'header', 'general']
 
 export default async function Welcome({ params: { locale }}) {
     const { t, resources } = await initTranslations(locale, namespaces)
@@ -39,7 +38,7 @@ return (
                 </span>
             </div>
         </div>
-        <ChatBubble />
+        <ChatBubble text={t('general:chat_bubble')}/>
       </div>
         <LanguageSwitcher />
     </TranslationsProvider>

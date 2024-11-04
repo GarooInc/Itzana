@@ -5,13 +5,12 @@ import FooterItem from '@/components/FooterItem/FooterItem'
 import TranslationsProvider from '@/components/TranslationsProvider'
 import initTranslations from '@/app/i18n'
 import LanguageSwitcher from '@/components/LanguageSwitcher/LanguageSwitcher';
-import ExperienceInnerItem from '@/components/ExperienceInnerItem/ExperienceInnerItem';
+import AmenitiesInnerItem from '@/components/AmenitiesInnerItem/AmenitiesInnerItem';
 
 const namespaces = ['experience', 'header'];
 export default function Experience({ params: { locale, experienceId }}) {
     const [translations, setTranslations] = useState({ t: () => '', resources: {} });
 
-    // Carga las traducciones
     useEffect(() => {
       const loadTranslations = async () => {
         const { t, resources } = await initTranslations(locale, namespaces);
@@ -27,9 +26,9 @@ export default function Experience({ params: { locale, experienceId }}) {
     <TranslationsProvider locale={locale} namespaces={namespaces} resources={resources}>
     <div className="page bg-white">
         <div className='flex flex-col justify-center items-center w-full relative'>
-            <HeaderItem v={"v2"} />
+            <HeaderItem v={"v2"} nav={'/amenities'} />
             <div className='flex flex-col justify-center items-center pt-4 w-full'>
-                <ExperienceInnerItem experienceId={experienceId} />
+                <AmenitiesInnerItem experienceId={experienceId} />
             </div>
         </div>
         <LanguageSwitcher />
