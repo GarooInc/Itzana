@@ -57,7 +57,10 @@ const FoodDrinksItem = () => {
                                     <TbClockHour3Filled className="food_icon" />
                                     {item.open} - {item.closes}
                                 </p>
-                                <button className='green_button' onClick={() => openPdf(item)}>{t('menu_btn')}</button>
+                                {
+                                    item.menu_pdf &&
+                                    <button className='green_button' onClick={() => openPdf(item)}>{t('menu_btn')}</button>
+                                }
                         </div>
                     </div>
                 </div>
