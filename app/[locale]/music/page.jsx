@@ -22,7 +22,6 @@ export default async function Music({ params: { locale }}) {
                 </div>
                 <ButtonNav title={t('music:playlists')} link="https://open.spotify.com/user/31bt7tjjtwyhemq7hwf7kourkl2m" />
             </div>
-            <FooterItem  transparent/>
         </div>
         <LanguageSwitcher />
         </TranslationsProvider>
