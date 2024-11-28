@@ -9,7 +9,7 @@ import FooterItem from '@/components/FooterItem/FooterItem'
 
 const namespaces = ['home', 'emergency']
 
-export default async function HouseKeeping({ params: { locale }}) {
+export default async function Emergency({ params: { locale }}) {
     const { t, resources } = await initTranslations(locale, namespaces)
 
     return (
