@@ -24,7 +24,7 @@ return (
                 </span>
             </div>
             <LanguageSwitcher />
-            <TabCartItem collection={"Adventures_VIP"} />
+            <TabCartItem collection={"Adventures_VIP"} type={"Aventura"} />
             <FooterCart />
         </div>
     </TranslationsProvider>

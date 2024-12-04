@@ -35,11 +35,13 @@ const CartItem = ({ showCart }) => {
 
     const onHandleSubmit = async (event) => {
         console.log(form)
+        console.log(state.items)
         const items = state.items.map(item => ({
             "itemName": item.Title || item.title,
             "variant": item.Variant,
             "price": parseFloat(item.Price),
-            "quantity": item.quantity
+            "quantity": item.quantity,
+            "Type": item.Type
         }))
         console.log("Items", items)
 

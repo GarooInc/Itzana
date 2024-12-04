@@ -35,7 +35,7 @@ return (
                 </div>
             </div>
             <LanguageSwitcher />
-            <TabCartItem collection={"adventures"} />
+            <TabCartItem collection={"adventures"} type={"Aventura"} />
             <span className="font-futura text-lg text-black py-2">{t('adventures:text3')}</span>
             <TripAdvisorEmbed />
             <FooterCart />

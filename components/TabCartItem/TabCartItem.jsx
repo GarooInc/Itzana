@@ -5,7 +5,7 @@ import { useCart } from '@/contexts/CartContext';
 import CartNotification from '@/components/CartNotification/CartNotification';
 import { useTranslation } from 'react-i18next';
 
-const TabCartItem = ({ collection }) => {
+const TabCartItem = ({ collection, type }) => {
     const [items, setItems] = useState([]);
     const [notification, setNotification] = useState(false);
     const [actualProduct, setActualProduct] = useState({});
@@ -39,6 +39,7 @@ const TabCartItem = ({ collection }) => {
             Title : item[`title_${currentLocale}`],
             Variant: "",
             Price: item.price,
+            Type: type,
         };
         dispatch({ type: 'ADD_ITEM', payload: updatedItem });
         setNotification(true);

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import PocketBase from 'pocketbase';
 import { useCart } from '@/contexts/CartContext';
 import CartNotification from '@/components/CartNotification/CartNotification';
-
+import { useTranslation } from 'react-i18next'
 const Menu = () => {
     const [food, setFood] = useState([]);
     const [notification, setNotification] = useState(false);
@@ -15,6 +15,9 @@ const Menu = () => {
 
     const pb = new PocketBase(`${backendUrl}`);    
     pb.autoCancellation(false);
+
+    const { i18n } = useTranslation();
+    const currentLocale = i18n.language;
 
     const selectVariant = (e, itemId) => {
         const selectedValue = e.target.value;
@@ -47,8 +50,10 @@ const Menu = () => {
     const addToCart = (item) => {
         const updatedItem = {
             ...item,
+            Title : item[`Title_${currentLocale}`],
             Variant: selectedVariants[item.id],
             Price: prices[item.id] || item.Price,
+            Type: 'Información',
         };
         dispatch({ type: 'ADD_ITEM', payload: updatedItem });
         setNotification(true);
@@ -63,8 +68,8 @@ const Menu = () => {
             {food.map((item, index) => (
                 <div key={index} className="bg-white flex flex-col justify-between h-full p-2">
                 <img className="w-full h-40 object-cover" src={`${backendUrl}/api/files/${item.collectionId}/${item.id}/${item.image}?token=`} alt={item.name} />
-                <h3 className="text-black text-base leading-tight font-futura mt-2">{item.Title}</h3>
-                <p className="text-black text-xs font-[futura light] leading-none">{item.Description}</p>
+                <h3 className="text-black text-base leading-tight font-futura mt-2">{item[`Title_${currentLocale}`]}</h3>
+                <p className="text-black text-xs font-[futura light] leading-none">{item[`Description_${currentLocale}`]}</p>
                 <div className="flex-1 flex flex-col justify-between">
                     {item.Variants ? (
                     <div className='flex flex-col mt-2'>

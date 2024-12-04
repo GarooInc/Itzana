@@ -28,6 +28,10 @@ export default async function Menu({ params: { locale }}) {
             link: '/food_drinks'
         },
         {
+            title: t('home:nav8'),
+            link: '/roomservice'
+        },
+        {
             title: t('home:nav14'),
             link: '/resort-services'
         },
