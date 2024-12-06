@@ -120,7 +120,7 @@
 }
 
 .button_line{
-    @apply text-green border-b-2 border-green px-6 py-2 mt-2 text-sm font-futura;
+    @apply  border-b-2  px-6 py-2 mt-2 text-sm font-futura hover:bg-light-brown hover:text-white border-light-brown
 }
 
 /* cart item */
@@ -221,4 +221,20 @@
 
 .food_icon{
   @apply text-light-brown text-lg;
+}
+
+/* menu */
+.menu_container{
+  @apply flex flex-col gap-10 pt-10 pb-20 md:px-10 px-8 w-full;
+}
+.menu_items_container{
+  @apply flex gap-4 justify-center items-center whitespace-nowrap px-10;
+}
+
+.menu_grid{
+  @apply grid grid-cols-1 gap-4 md:grid-cols-4 grid-flow-row-dense auto-rows-auto;
+}
+
+.menu_items_container button:first-child {
+  margin-left: 200px;
 }
