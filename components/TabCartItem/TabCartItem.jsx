@@ -74,8 +74,15 @@ const TabCartItem = ({ collection, type }) => {
                         <img className="adventure_img" src={`${backendUrl}/api/files/${item.collectionId}/${item.id}/${item.image}?token=`} alt={item.name} />
                         <h3 className="adventure_title">{item[`title_${currentLocale}`]}</h3>
                         <p className="text-black text-md font-futuralight leading-6 tracking-tight" dangerouslySetInnerHTML={{ __html: item[`description_${currentLocale}`] }}></p>
-                        <p className="text-light-brown text-xs  leading-none font-futura font-bold"> ${item.price}</p>
-                        <button className='green_button w-[200px] absolute bottom-4' onClick={() => addToCart(item)}>Request a reservation</button>
+                        <p className="text-light-brown text-xs  leading-none font-futura font-bold"> {
+                            item.price !== 0 ? `$${item.price}` : currentLocale === 'en' ? <span>Ask <a className='underline' href='https://api.whatsapp.com/send/?phone=5016101329&text&type=phone_number&app_absent=0'>concierge</a> for price</span> : <span>Preguntar al <a className='underline' href='https://api.whatsapp.com/send/?phone=5016101329&text&type=phone_number&app_absent=0'>concierge</a> por el precio</span>
+                            }
+                        </p>
+                        {
+                            item.price !== 0 && (
+                                <button className='green_button w-[200px] absolute bottom-4' onClick={() => addToCart(item)}>Request a reservation</button>
+                            )
+                        }
                     </div>
                 ))}
                 {notification && <CartNotification productName={actualProduct[`title_${currentLocale}`]} productImage={`${backendUrl}/api/files/${actualProduct.collectionId}/${actualProduct.id}/${actualProduct.image}?token=`} productVariant={actualProduct.Variant} />}

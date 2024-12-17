@@ -6,7 +6,6 @@ import FooterCart from '@/components/FooterCart/FooterCart'
 import Image from 'next/image'
 import LanguageSwitcher from '@/components/LanguageSwitcher/LanguageSwitcher'
 import TabCartItem from '@/components/TabCartItem/TabCartItem'
-import TripAdvisorEmbed from '@/components/TripAdvisorEmbed/TripAdvisorEmbed'
 
 
 const namespaces = ['adventures', 'header']
@@ -37,7 +36,6 @@ return (
             <LanguageSwitcher />
             <TabCartItem collection={"adventures"} type={"Aventura"} />
             <span className="font-futura text-lg text-black py-2">{t('adventures:text3')}</span>
-            <TripAdvisorEmbed />
             <FooterCart />
         </div>
     </TranslationsProvider>

@@ -113,7 +113,6 @@ const Menu = () => {
             <div className="menu_grid">
             {filteredItems.map((item, index) => (
                 <div key={index} className="bg-white flex flex-col justify-between h-full p-2">
-                <img className="w-full h-40 object-cover" src={`${backendUrl}/api/files/${item.collectionId}/${item.id}/${item.image}?token=`} alt={item.name} />
                 <h3 className="text-black text-base leading-tight font-futura mt-2">{item[`Title_${currentLocale}`]}</h3>
                 <p className="text-black text-xs font-[futura light] leading-none">{item[`Description_${currentLocale}`]}</p>
                 <div className="flex-1 flex flex-col justify-between">

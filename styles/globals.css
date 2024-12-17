@@ -120,7 +120,7 @@
 }
 
 .button_line{
-    @apply  border-b-2  px-6 py-2 mt-2 text-sm font-futura hover:bg-light-brown hover:text-white border-light-brown
+    @apply  border-b-2  px-6 py-2 mt-2 text-sm font-futura hover:bg-light-brown hover:text-white border-light-brown text-light-brown;
 }
 
 /* cart item */
@@ -232,7 +232,7 @@
 }
 
 .menu_grid{
-  @apply grid grid-cols-1 gap-4 md:grid-cols-4 grid-flow-row-dense auto-rows-auto;
+  @apply grid grid-cols-1 gap-4 md:grid-cols-4 grid-flow-row-dense auto-rows-auto pb-12;
 }
 
 .menu_items_container button:first-child {
