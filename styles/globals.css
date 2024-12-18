@@ -238,3 +238,10 @@
 .menu_items_container button:first-child {
   margin-left: 200px;
 }
+
+
+/* social media */
+
+.media_icon{
+  @apply text-white text-6xl;
+}

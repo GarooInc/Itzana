@@ -4,8 +4,6 @@ import TranslationsProvider from '@/components/TranslationsProvider'
 import LanguageSwitcher from '@/components/LanguageSwitcher/LanguageSwitcher'
 import ButtonNav from '@/components/ButtonNav/ButtonNav'
 import ChatBubble from '@/components/ChatBubble/ChatBubble'
-import TripAdvisorEmbed from '@/components/TripAdvisorEmbed/TripAdvisorEmbed'
-import SocialMediaItem from '@/components/SocialMediaItem/SocialMediaItem'
 import { HiInformationCircle } from "react-icons/hi2"
 
 const namespaces = ['home', 'header','general']
@@ -64,6 +62,14 @@ export default async function Menu({ params: { locale }}) {
         {
             title: t('home:nav17'),
             link: '/music'
+        },
+        {
+            title: t('home:nav18'),
+            link: 'https://www.tripadvisor.com/Hotel_Review-g291977-d12844316-Reviews-Itz_ana_Belize_Resort_Residences-Placencia_Stann_Creek.html'
+        },
+        {
+            title: t('home:nav19'),
+            link: '/social-media'
         }
     ]
 
@@ -78,9 +84,6 @@ export default async function Menu({ params: { locale }}) {
                             <ButtonNav key={index} title={item.title} link={item.link} />
                         ))
                     }
-                    <TripAdvisorEmbed />
-                    <SocialMediaItem />
-                    
                 </div>
             </div>
             <ChatBubble text={t('general:chat_bubble')} />
