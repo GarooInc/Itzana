@@ -4,7 +4,7 @@ import { CgArrowLongRight } from 'react-icons/cg';
 import { useRouter } from "next/navigation"
 import { motion } from 'framer-motion'
 
-const ButtonNav = ({title, link}) => {
+const ButtonNav = ({title, link, icon}) => {
     const router = useRouter()
     
     const handleClick = () => {
@@ -19,6 +19,7 @@ const ButtonNav = ({title, link}) => {
             transition={{ duration: 0.8 }}
         >
             <div className="p-4 flex font-futura font-light text-cream bg-light-brown/60 rounded-full" onClick={handleClick}>
+                {icon && <img src={icon} alt={title} className="w-8 h-8 mr-4" />}
                 <span className='flex justify-between w-full'>{title} <CgArrowLongRight className="inline-block text-xl" /></span>
             </div>
         </motion.div>
