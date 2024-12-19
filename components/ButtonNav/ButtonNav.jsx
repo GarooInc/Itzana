@@ -18,8 +18,8 @@ const ButtonNav = ({title, link, icon}) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
         >
-            <div className="p-4 flex font-futura font-light text-cream bg-light-brown/60 rounded-full" onClick={handleClick}>
-                {icon && <img src={icon} alt={title} className="w-8 h-8 mr-4" />}
+            <div className="p-4 flex font-futura font-light text-cream bg-light-brown/60 rounded-full items-center gap-2" onClick={handleClick}>
+                {icon && <img src={icon} alt={title} className="w-8 h-8" />}
                 <span className='flex justify-between w-full'>{title} <CgArrowLongRight className="inline-block text-xl" /></span>
             </div>
         </motion.div>
