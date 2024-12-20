@@ -78,7 +78,7 @@ export default async function Menu({ params: { locale }}) {
         },
         {
             title: t('home:nav18'),
-            link: 'https://www.tripadvisor.com/Hotel_Review-g291977-d12844316-Reviews-Itz_ana_Belize_Resort_Residences-Placencia_Stann_Creek.html',
+            link: 'https://www.tripadvisor.com/UserReviewEdit-g291977-d12844316-Itz_ana_Belize_Resort_Residences-Placencia_Stann_Creek.html',
             icon: '/assets/images/icons_menu/TRIP.png'
         },
         {
