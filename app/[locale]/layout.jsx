@@ -1,11 +1,12 @@
 import "@/styles/globals.css"
 import { CartProvider } from '@/contexts/CartContext'
+import Script from "next/script"
 
 
 export const metadata = {
     title: 'Itz Ana  Resort',
     description: 'At Itz Ana resort, we offer luxury accommodations, adventure tours, and all-inclusive packages. ',
-    url: '',
+    url: 'https://itzana.room-directory.com/',
     image: '/assets/images/logo_v1.png'
 }
 
@@ -22,6 +23,21 @@ const RootLayout = ({children}) => {
             <meta property="og:image" content={metadata.image} />
             <meta property="og:url" content={metadata.url} />
             <meta name="keywords" content="hotel, belize "></meta>            
+            {/* Google Analytics */}
+            <Script
+              strategy="afterInteractive"
+              src="https://www.googletagmanager.com/gtag/js?id=G-NB9WT17VMH"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', 'G-NB9WT17VMH');
+              `}
+            </Script>
+
         </head>
         <body>
             <main className='app'>
