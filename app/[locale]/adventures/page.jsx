@@ -20,18 +20,6 @@ return (
             <div className='flex flex-col justify-center items-center'>
                 <img src="/assets/images/logo_v1.png" alt="logo" className="w-[150px]" />
                 <h1 className="italictiempos_title">{t('adventures:title')}</h1>
-                <div className='flex flex-col py-4 justify-center items-center md:w-3/4 gap-10'>
-                    <Image src="/assets/images/adventures/jaime.png" alt="line" width={800} height={500} className='md:w-60 w-40 object-cover' />
-                    <div className='flex flex-col gap-2'>
-                        <span className="tiempos_description">
-                            {t('adventures:text1')}
-                        </span>
-                        <span className="tiempos_description">
-                            {t('adventures:text2')}
-                        </span>
-                        <Image src="/assets/images/adventures/firma.png" alt="adventures" width={800} height={500} className='w-20 h-20' />
-                    </div>
-                </div>
             </div>
             <LanguageSwitcher />
             <TabCartItem collection={"adventures"} type={"Aventura"} />
