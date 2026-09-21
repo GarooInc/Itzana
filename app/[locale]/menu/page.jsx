@@ -34,7 +34,8 @@ export default async function Menu({ params: { locale }}) {
         {
             title: t('home:nav8'),
             link: '/roomservice',
-            icon: '/assets/images/icons_menu/ROOMSERVICE.png'
+            icon: '/assets/images/icons_menu/ROOMSERVICE.png',
+            hidden: true
         },
         {
             title: t('home:nav14'),
@@ -95,7 +96,7 @@ export default async function Menu({ params: { locale }}) {
                 <img src="/assets/images/logo_v6.png" alt="logo" className="w-[150px]" />
                 <div className="flex flex-col justify-center items-center gap-4 py-10">
                     {
-                        nav.map((item, index) => (
+                        nav.filter((item) => !item.hidden).map((item, index) => (
                             <ButtonNav key={index} title={item.title} link={item.link} icon={item.icon} />
                         ))
                     }
