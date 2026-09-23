@@ -17,8 +17,14 @@ const FoodDrinksItem = () => {
     const currentLocale = i18n.language;
 
 
-    const openPdf = (item) => {
-        window.open(`${backendUrl}/api/files/${item.collectionId}/${item.id}/${item.menu_pdf}?token=`);
+    const menuButtons = [
+        { field: 'breakfast_pdf', label: 'breakfast_btn' },
+        { field: 'lunch_dinner_pdf', label: 'lunch_dinner_btn' },
+        { field: 'wine_pdf', label: 'wine_btn' },
+    ];
+
+    const openPdf = (item, field = 'menu_pdf') => {
+        window.open(`${backendUrl}/api/files/${item.collectionId}/${item.id}/${item[field]}?token=`);
     };
 
 
@@ -58,8 +64,16 @@ const FoodDrinksItem = () => {
                                     {item.open} - {item.closes}
                                 </p>
                                 {
-                                    item.menu_pdf &&
-                                    <button className='green_button' onClick={() => openPdf(item)}>{t('menu_btn')}</button>
+                                    menuButtons.some(({ field }) => item[field]) ? (
+                                        <div className='flex flex-wrap gap-3'>
+                                            {menuButtons.filter(({ field }) => item[field]).map(({ field, label }) => (
+                                                <button key={field} className='green_button' onClick={() => openPdf(item, field)}>{t(label)}</button>
+                                            ))}
+                                        </div>
+                                    ) : (
+                                        item.menu_pdf &&
+                                        <button className='green_button' onClick={() => openPdf(item)}>{t('menu_btn')}</button>
+                                    )
                                 }
                         </div>
                     </div>
