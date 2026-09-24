@@ -18,9 +18,9 @@ const FoodDrinksItem = () => {
 
 
     const menuButtons = [
-        { field: 'breakfast_pdf', label: 'breakfast_btn' },
-        { field: 'lunch_pdf', label: 'lunch_btn' },
-        { field: 'kids_pdf', label: 'kids_btn' },
+        { field: 'breakfast_pdf', label: { en: 'Breakfast Menu', es: 'Menú de desayuno' } },
+        { field: 'lunch_pdf', label: { en: 'Lunch Menu', es: 'Menú de almuerzo' } },
+        { field: 'kids_pdf', label: { en: 'Kids Menu', es: 'Menú infantil' } },
     ];
 
     const openPdf = (item, field = 'menu_pdf') => {
@@ -67,7 +67,7 @@ const FoodDrinksItem = () => {
                                     menuButtons.some(({ field }) => item[field]) ? (
                                         <div className='flex flex-wrap gap-3'>
                                             {menuButtons.filter(({ field }) => item[field]).map(({ field, label }) => (
-                                                <button key={field} className='green_button' onClick={() => openPdf(item, field)}>{t(label)}</button>
+                                                <button key={field} className='green_button' onClick={() => openPdf(item, field)}>{label[currentLocale] || label.es}</button>
                                             ))}
                                         </div>
                                     ) : (
