@@ -19,8 +19,8 @@ const FoodDrinksItem = () => {
 
     const menuButtons = [
         { field: 'breakfast_pdf', label: 'breakfast_btn' },
-        { field: 'lunch_dinner_pdf', label: 'lunch_dinner_btn' },
-        { field: 'wine_pdf', label: 'wine_btn' },
+        { field: 'lunch_pdf', label: 'lunch_btn' },
+        { field: 'kids_pdf', label: 'kids_btn' },
     ];
 
     const openPdf = (item, field = 'menu_pdf') => {
