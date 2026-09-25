@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import PocketBase from 'pocketbase';
 import { MdLocationPin } from "react-icons/md";
 import { TbClockHour3Filled } from "react-icons/tb";
+import { FaWhatsapp } from "react-icons/fa";
 import { useTranslation } from 'react-i18next';
 
 
@@ -25,6 +26,14 @@ const FoodDrinksItem = () => {
 
     const openPdf = (item, field = 'menu_pdf') => {
         window.open(`${backendUrl}/api/files/${item.collectionId}/${item.id}/${item[field]}?token=`);
+    };
+
+    const getWhatsappLink = (item) => {
+        const digits = (item.whatsapp_number || '').replace(/\D/g, '');
+        const message = currentLocale === 'es'
+            ? `Hola, quisiera hacer un pedido del menú de ${item.title_es}.`
+            : `Hi, I'd like to place an order from the ${item.title_en} menu.`;
+        return `https://wa.me/${digits}?text=${encodeURIComponent(message)}`;
     };
 
 
@@ -64,15 +73,28 @@ const FoodDrinksItem = () => {
                                     {item.open} - {item.closes}
                                 </p>
                                 {
-                                    menuButtons.some(({ field }) => item[field]) ? (
+                                    (menuButtons.some(({ field }) => item[field]) || item.menu_pdf || item.whatsapp_number) && (
                                         <div className='flex flex-wrap gap-3'>
-                                            {menuButtons.filter(({ field }) => item[field]).map(({ field, label }) => (
-                                                <button key={field} className='green_button' onClick={() => openPdf(item, field)}>{label[currentLocale] || label.es}</button>
-                                            ))}
+                                            {menuButtons.some(({ field }) => item[field]) ? (
+                                                menuButtons.filter(({ field }) => item[field]).map(({ field, label }) => (
+                                                    <button key={field} className='green_button' onClick={() => openPdf(item, field)}>{label[currentLocale] || label.es}</button>
+                                                ))
+                                            ) : (
+                                                item.menu_pdf &&
+                                                <button className='green_button' onClick={() => openPdf(item)}>{t('menu_btn')}</button>
+                                            )}
+                                            {item.whatsapp_number && (
+                                                <a
+                                                    href={getWhatsappLink(item)}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className='green_button flex items-center gap-2'
+                                                >
+                                                    <FaWhatsapp className="text-base" />
+                                                    WhatsApp
+                                                </a>
+                                            )}
                                         </div>
-                                    ) : (
-                                        item.menu_pdf &&
-                                        <button className='green_button' onClick={() => openPdf(item)}>{t('menu_btn')}</button>
                                     )
                                 }
                         </div>
