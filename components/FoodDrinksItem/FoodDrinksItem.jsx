@@ -79,34 +79,36 @@ const FoodDrinksItem = () => {
                                 </p>
                                 {
                                     (menuButtons.some(({ field }) => item[field]) || item.menu_pdf || item.whatsapp_number) && (
-                                        <div className='flex flex-wrap gap-3'>
-                                            {menuButtons.some(({ field }) => item[field]) ? (
-                                                menuButtons.filter(({ field }) => item[field]).map(({ field, label }) => (
-                                                    <button key={field} className='green_button' onClick={() => openPdf(item, field)}>{label[currentLocale] || label.es}</button>
-                                                ))
-                                            ) : (
-                                                item.menu_pdf &&
-                                                <button className='green_button' onClick={() => openPdf(item)}>{t('menu_btn')}</button>
-                                            )}
+                                        <div className='flex flex-wrap gap-3 justify-between items-center w-full'>
+                                            <div className='flex flex-wrap gap-3'>
+                                                {menuButtons.some(({ field }) => item[field]) ? (
+                                                    menuButtons.filter(({ field }) => item[field]).map(({ field, label }) => (
+                                                        <button key={field} className='green_button' onClick={() => openPdf(item, field)}>{label[currentLocale] || label.es}</button>
+                                                    ))
+                                                ) : (
+                                                    item.menu_pdf &&
+                                                    <button className='green_button' onClick={() => openPdf(item)}>{t('menu_btn')}</button>
+                                                )}
+                                            </div>
                                             {item.whatsapp_number && (
-                                                <a
-                                                    href={getWhatsappLink(item)}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className='green_button flex items-center gap-2'
-                                                >
-                                                    <FaWhatsapp className="text-base" />
-                                                    WhatsApp
-                                                </a>
-                                            )}
-                                            {item.whatsapp_number && (
-                                                <a
-                                                    href={getCallLink(item)}
-                                                    className='green_button flex items-center gap-2'
-                                                >
-                                                    <FaPhone className="text-base" />
-                                                    {currentLocale === 'es' ? 'Llamar' : 'Call'}
-                                                </a>
+                                                <div className='flex flex-wrap gap-3'>
+                                                    <a
+                                                        href={getWhatsappLink(item)}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className='green_button flex items-center gap-2'
+                                                    >
+                                                        <FaWhatsapp className="text-base" />
+                                                        WhatsApp
+                                                    </a>
+                                                    <a
+                                                        href={getCallLink(item)}
+                                                        className='green_button flex items-center gap-2'
+                                                    >
+                                                        <FaPhone className="text-base" />
+                                                        {currentLocale === 'es' ? 'Llamar' : 'Call'}
+                                                    </a>
+                                                </div>
                                             )}
                                         </div>
                                     )
